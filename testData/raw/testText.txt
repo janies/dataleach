@@ -1,0 +1,31 @@
+The tracking and targeting of consumers online has reached "alarming levels," warned a coalition of consumer and privacy groups in a letter to Congress on Monday.
+
+The collection of 11 groups, which includes Consumer Action, Consumers Union, and the Electronic Frontier Foundation, said that because the online industry has been unable to regulate itself in protecting the privacy of consumers, it's time for government to step in.
+
+"This tracking is an invasion of privacy...Consumers now rely on the Internet and other digital services for a wide variety of transactions," the groups wrote in their letter to Congress. "These include sensitive activities, such as health and financial matters. In these contexts, tracking people's every move online is not simply a matter of convenience or relevance. It presents serious risks to consumers' privacy, security and dignity."
+
+Anticipating the introduction of a draft of new privacy legislation on Tuesday by Rep. Rick Boucher (D-Va.), chairman of the House Energy and Commerce's Subcommittee on Communications, Technology and the Internet, the coalition outlined a series of goals in its letter to all members of the House of Representatives.
+
+The rights of online consumers have been a hot-button issue for Boucher, who has also spoken about such issues as Net neutrality and the Digital Millennium Copyright Act. Boucher wrote an op-ed column on his Web site last September stressing the need for online privacy protection.
+
+Noting that U.S. privacy policies have been based on the principles of Fair Information Practices, which determine how organizations can collect private information from individuals, the groups asked Congress to consider such factors as how consumers are notified when personal data is collected, what choice consumers have in revealing such information, and how secure is that data when stored by Web sites.
+
+Specifically, the coalition offered several action items that Congress should include in any privacy legislation:
+
+    * An individual's privacy should be fully protected. Even if information can't be traced back to names or addresses, consumers can still be identified by IP addresses, cookies, and similar bits of data.
+    * Web sites collecting the buying habits and product preferences of consumers should be restricted to 24 hours to gather such data unless the individual actively opts in.
+    * In tracking consumer preferences, Web sites should not be allowed to use sensitive information, such as health and financial records, race, sexual orientation, or political activity.
+    * Personal data should be collected only through legal means and, unless lawful or impossible, with the consent of the individual.
+    * Personal and behavioral data collected should specifically relate to the purposes for which they're intended. Web sites should also clearly explain the reasons for collecting such information.
+    * Web sites must secure and protect the information they collect to prevent it from being changed or accessed by unauthorized parties.
+    * Web sites should reveal their practices, uses, and policies for collecting personal information.
+    * Consumers should be able to find out whether a company or tracking organization has information on them and be able to obtain a copy of that information. They should also be able to correct the data if needed and request that it be removed.
+
+"Consumers need rights, and profiling should have limits. Behavioral tracking and targeting can be used to take advantage of vulnerable individuals, or to unfairly discriminate against people," the groups wrote. "The potential misuse of health or financial information is especially troubling. The assumptions that can be made about people based on behavioral tracking may have detrimental consequences for them. Online profiles may also be obtained by government agencies, private investigators, and others for purposes that go far beyond advertising."
+
+Besides Consumer Action, Consumers Union, and the Electronic Frontier Foundation, the coalition includes the Center for Digital Democracy, Consumer Federation of America, Consumer Watchdog, Privacy Lives, Privacy Rights Clearinghouse, Privacy Times, U.S. Public Interest Research Group, and the World Privacy Forum.
+
+With new privacy legislation being drafted by Reps. Boucher and Cliff Stearns (R-Fla.), the coalition is hoping to strike while the issue is hot. Both men are expected to post a draft of the proposed bill on their Web sites on Tuesday, according to The Wall Street Journal. The two will look for feedback on the draft over the next two months and then rewrite the bill before introducing it at an upcoming House subcommittee hearing.
+
+Based on the draft of the bill, Web sites gathering information would need to tell consumers how that data is collected and used and with whom it is shared, according to the Journal. Consumers who don't want that information to be collected should be able to opt out directly from the Web site.
+

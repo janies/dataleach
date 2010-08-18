@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bugtraq</title>
+    <link>http://seclists.org/#bugtraq</link>
+    <atom:link href="http://seclists.org/rss/bugtraq.rss" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <description>The premier general security mailing list. Vulnerabilities are often announced here first, so check frequently!</description>
+    <pubDate>Thu, 01 Apr 2010 19:15:35 GMT</pubDate>
+    <lastBuildDate>Thu, 01 Apr 2010 19:15:35 GMT</lastBuildDate>
+<!-- MHonArc v2.6.16 -->
+
+ 
+
+  <item>
+    <title>VUPEN Security Research - Apple Quicktime PICT Handling Heap Overflow Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/11</link>
+    <description>&lt;p&gt;Posted by VUPEN Security Research on Apr 01&lt;/p&gt;VUPEN Security Research - Apple Quicktime PICT Handling Heap Overflow &lt;br&gt;
+Vulnerability&lt;br&gt;
+&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.vupen.com/english/research.php&quot;&gt;http://www.vupen.com/english/research.php&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+---------------------&lt;br&gt;
+&lt;br&gt;
+&amp;quot;Apple QuickTime is software that allows Mac and Windows users to play&lt;br&gt;
+back audio and video on their computers. But taking a deeper look,&lt;br&gt;
+QuickTime is many things: a file format, an environment for media&lt;br&gt;
+authoring and a suite of applications&amp;quot; from Apple.com&lt;br&gt;
+&lt;br&gt;
+II. DESCRIPTION...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 19:12:12 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/11</guid>
+  </item>
+  <item>
+    <title>Juniper SRX Critical Denial of Service Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/10</link>
+    <description>&lt;p&gt;Posted by J. Oquendo on Apr 01&lt;/p&gt;*Juniper SRX Critical Denial of Service Vulnerability*&lt;br&gt;
+&lt;br&gt;
+*Overview*&lt;br&gt;
+According to Google Finance: /Juniper Networks, Inc. designs, develops&lt;br&gt;
+and sells products and services that together provide its customers&lt;br&gt;
+with network infrastructure that creates responsive and trusted&lt;br&gt;
+environments for accelerating the deployment of services and&lt;br&gt;
+applications over a single network. The Company serves the networking&lt;br&gt;
+requirements of global service providers,...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 18:39:05 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/10</guid>
+  </item>
+  <item>
+    <title>VUPEN Security Research - Sun Java JDK/JRE AWT Library Invalid Index Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/9</link>
+    <description>&lt;p&gt;Posted by VUPEN Security Research on Apr 01&lt;/p&gt;VUPEN Security Research - Sun Java JDK/JRE AWT Library Invalid Index &lt;br&gt;
+Vulnerability&lt;br&gt;
+&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.vupen.com/english/research.php&quot;&gt;http://www.vupen.com/english/research.php&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+---------------------&lt;br&gt;
+&lt;br&gt;
+&amp;quot;Java is a programming language and computing platform released by&lt;br&gt;
+Sun Microsystems. It is the underlying technology that powers&lt;br&gt;
+state-of-the-art programs including utilities, games, and business&lt;br&gt;
+applications.&lt;br&gt;
+&lt;br&gt;
+Java runs on more than 850 million personal computers worldwide,&lt;br&gt;
+and...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 17:50:44 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/9</guid>
+  </item>
+  <item>
+    <title>VUPEN Security Research - Sun Java JDK/JRE AWT Library Invalid Pointer Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/8</link>
+    <description>&lt;p&gt;Posted by VUPEN Security Research on Apr 01&lt;/p&gt;VUPEN Security Research - Sun Java JDK/JRE AWT Library Invalid Pointer &lt;br&gt;
+Vulnerability&lt;br&gt;
+&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.vupen.com/english/research.php&quot;&gt;http://www.vupen.com/english/research.php&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+---------------------&lt;br&gt;
+&lt;br&gt;
+&amp;quot;Java is a programming language and computing platform released by&lt;br&gt;
+Sun Microsystems. It is the underlying technology that powers&lt;br&gt;
+state-of-the-art programs including utilities, games, and business&lt;br&gt;
+applications.&lt;br&gt;
+&lt;br&gt;
+Java runs on more than 850 million personal computers worldwide,...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 16:58:43 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/8</guid>
+  </item>
+  <item>
+    <title>VUPEN Security Research - Apple Quicktime FLC Encoded Movie Heap Overflow Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/7</link>
+    <description>&lt;p&gt;Posted by VUPEN Security Research on Apr 01&lt;/p&gt;VUPEN Security Research - Apple Quicktime FLC Encoded Movie Heap Overflow&lt;br&gt;
+Vulnerability&lt;br&gt;
+&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.vupen.com/english/research.php&quot;&gt;http://www.vupen.com/english/research.php&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+---------------------&lt;br&gt;
+&lt;br&gt;
+&amp;quot;Apple QuickTime is software that allows Mac and Windows users to play&lt;br&gt;
+back audio and video on their computers. But taking a deeper look,&lt;br&gt;
+QuickTime is many things: a file format, an environment for media&lt;br&gt;
+authoring and a suite of applications&amp;quot; from Apple.com&lt;br&gt;
+&lt;br&gt;
+II....&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 16:48:43 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/7</guid>
+  </item>
+  <item>
+    <title>DynPG CMS v4.1.0 Multiple Remote File Inclusion Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/6</link>
+    <description>&lt;p&gt;Posted by eidelweiss on Apr 01&lt;/p&gt;Dear,&lt;br&gt;
+&lt;br&gt;
+I found Some vulnerability in DynPG CMS , This the full exploit code:&lt;br&gt;
+&lt;br&gt;
+[+]Title        :       DynPG CMS Multiple Remote File Inclusion Vulnerability&lt;br&gt;
+[+]Version:     4.1.0 (Other or lower versions may also be affected)&lt;br&gt;
+[+]Download:    &lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.dynpg.org/download_en.php&quot;&gt;http://www.dynpg.org/download_en.php&lt;/a&gt;&lt;br&gt;
+[+]License:     GNU / GPL&lt;br&gt;
+[+]Metode :     Remote File Inclusion&lt;br&gt;
+[+]Author:      eidelweiss&lt;br&gt;
+&lt;br&gt;
+        [*]Special to Syabilla_putri (I miss u so much to)[*]...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 16:38:20 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/6</guid>
+  </item>
+  <item>
+    <title>Zabbix &lt;= 1.8.1 SQL Injection</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/5</link>
+    <description>&lt;p&gt;Posted by Dawid Golunski on Apr 01&lt;/p&gt;=============================================&lt;br&gt;
+- Release date: April 1st, 2010&lt;br&gt;
+- Discovered by: Dawid Golunski&lt;br&gt;
+- Severity: High&lt;br&gt;
+=============================================&lt;br&gt;
+&lt;br&gt;
+I. VULNERABILITY&lt;br&gt;
+-------------------------&lt;br&gt;
+Zabbix &amp;lt;= 1.8.1 SQL Injection&lt;br&gt;
+&lt;br&gt;
+II. BACKGROUND&lt;br&gt;
+-------------------------&lt;br&gt;
+Zabbix is an enterprise-class open source distributed monitoring  &lt;br&gt;
+solution.&lt;br&gt;
+Zabbix is software that monitors numerous parameters of a network and  &lt;br&gt;
+the...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 16:30:25 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/5</guid>
+  </item>
+  <item>
+    <title>VUPEN Security Research - Sun Java JDK/JRE Unpack200 Buffer Overflow Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/4</link>
+    <description>&lt;p&gt;Posted by VUPEN Security Research on Apr 01&lt;/p&gt;VUPEN Security Research - Sun Java JDK/JRE Unpack200 Buffer Overflow &lt;br&gt;
+Vulnerability&lt;br&gt;
+&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.vupen.com/english/research.php&quot;&gt;http://www.vupen.com/english/research.php&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+---------------------&lt;br&gt;
+&lt;br&gt;
+&amp;quot;Java is a programming language and computing platform released by&lt;br&gt;
+Sun Microsystems. It is the underlying technology that powers&lt;br&gt;
+state-of-the-art programs including utilities, games, and business&lt;br&gt;
+applications.&lt;br&gt;
+&lt;br&gt;
+Java runs on more than 850 million personal computers worldwide,&lt;br&gt;
+and...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 16:16:58 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/4</guid>
+  </item>
+  <item>
+    <title>CSRF Vulnerability in OSSIM 2.2.1</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/3</link>
+    <description>&lt;p&gt;Posted by nicolas . grandjean on Apr 01&lt;/p&gt;================== Summary ==================&lt;br&gt;
+&lt;br&gt;
+CSRF Vulnerability in OSSIM 2.2.1&lt;br&gt;
+&lt;br&gt;
+Discovered by: CONIX Security (www.conix.fr)&lt;br&gt;
+Public Release Date: 4/01/2010&lt;br&gt;
+Vendor: Alienvault (www.alienvault.com)&lt;br&gt;
+&lt;br&gt;
+============= Technical Details =============&lt;br&gt;
+&lt;br&gt;
+The page /ossim/control_panel/alarm_console.php is vulnerable to a CSRF vulnerability. An attacker can send a malicious &lt;br&gt;
+link to an authorized OSSIM user and, by social engineering, provoke the deletion...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 16:03:05 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/3</guid>
+  </item>
+  <item>
+    <title>VUPEN Security Research - Apple Quicktime PICT Processing Integer Overflow Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/2</link>
+    <description>&lt;p&gt;Posted by VUPEN Security Research on Apr 01&lt;/p&gt;VUPEN Security Research - Apple Quicktime PICT Processing Integer Overflow &lt;br&gt;
+Vulnerability&lt;br&gt;
+&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.vupen.com/english/research.php&quot;&gt;http://www.vupen.com/english/research.php&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+---------------------&lt;br&gt;
+&lt;br&gt;
+&amp;quot;Apple QuickTime is software that allows Mac and Windows users to play&lt;br&gt;
+back audio and video on their computers. But taking a deeper look,&lt;br&gt;
+QuickTime is many things: a file format, an environment for media&lt;br&gt;
+authoring and a suite of applications&amp;quot; from Apple.com&lt;br&gt;
+&lt;br&gt;
+II....&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 15:32:59 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/2</guid>
+  </item>
+  <item>
+    <title>VUPEN Security Research - Apple iTunes ColorSync Profile Integer Overflow Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/1</link>
+    <description>&lt;p&gt;Posted by VUPEN Security Research on Apr 01&lt;/p&gt;VUPEN Security Research - Apple iTunes ColorSync Profile Integer Overflow &lt;br&gt;
+Vulnerability&lt;br&gt;
+&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.vupen.com/english/research.php&quot;&gt;http://www.vupen.com/english/research.php&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+---------------------&lt;br&gt;
+&lt;br&gt;
+&amp;quot;iTunes is a free application for Mac or PC. It organizes and plays&lt;br&gt;
+digital music and video on computers. It syncs all media files&lt;br&gt;
+with iPod, iPhone, and Apple TV.&amp;quot; from Apple.com&lt;br&gt;
+&lt;br&gt;
+II. DESCRIPTION&lt;br&gt;
+&lt;br&gt;
+--------------------- &lt;br&gt;
+&lt;br&gt;
+VUPEN Vulnerability Research Team discovered a...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 15:17:56 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/1</guid>
+  </item>
+  <item>
+    <title>[USN-922-1] libnss-db vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Apr/0</link>
+    <description>&lt;p&gt;Posted by Kees Cook on Apr 01&lt;/p&gt;===========================================================&lt;br&gt;
+Ubuntu Security Notice USN-922-1             March 31, 2010&lt;br&gt;
+libnss-db vulnerability&lt;br&gt;
+CVE-2010-0826&lt;br&gt;
+===========================================================&lt;br&gt;
+&lt;br&gt;
+A security issue affects the following Ubuntu releases:&lt;br&gt;
+&lt;br&gt;
+Ubuntu 8.04 LTS&lt;br&gt;
+Ubuntu 8.10&lt;br&gt;
+Ubuntu 9.04&lt;br&gt;
+Ubuntu 9.10&lt;br&gt;
+&lt;br&gt;
+This advisory also applies to the corresponding versions of&lt;br&gt;
+Kubuntu, Edubuntu, and Xubuntu.&lt;br&gt;
+&lt;br&gt;
+The problem can be corrected...&lt;br&gt;</description>
+    <pubDate>Thu, 01 Apr 2010 15:03:58 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Apr/0</guid>
+  </item>
+
+ 
+
+<!-- MHonArc v2.6.16 -->
+<!-- MHonArc v2.6.16 -->
+
+ 
+
+  <item>
+    <title>[SECURITY] CVE-2008-2370: Apache CouchDB Timing Attack Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Mar/266</link>
+    <description>&lt;p&gt;Posted by Jan Lehnardt on Mar 31&lt;/p&gt;My sincere apologies, I mixed up the CVE number. Here is the update report.&lt;br&gt;
+&lt;br&gt;
+Cheers&lt;br&gt;
+Jan&lt;br&gt;</description>
+    <pubDate>Wed, 31 Mar 2010 19:42:04 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Mar/266</guid>
+  </item>
+  <item>
+    <title>iDefense Security Advisory 03.30.10: Oracle Java Runtime Environment Image FIle Buffer Overflow Vulnerability</title>
+    <link>http://seclists.org/bugtraq/2010/Mar/265</link>
+    <description>&lt;p&gt;Posted by iDefense Labs on Mar 31&lt;/p&gt;iDefense Security Advisory 03.30.10&lt;br&gt;
+&lt;a  rel=&quot;nofollow&quot; href=&quot;http://labs.idefense.com/intelligence/vulnerabilities/&quot;&gt;http://labs.idefense.com/intelligence/vulnerabilities/&lt;/a&gt;&lt;br&gt;
+Mar 30, 2010&lt;br&gt;
+&lt;br&gt;
+I. BACKGROUND&lt;br&gt;
+&lt;br&gt;
+The Java Runtime Environment (JRE) is the Sun Microsystems&lt;br&gt;
+implementation of the Java run-time. For more information, visit the&lt;br&gt;
+link shown below.&lt;br&gt;
+&lt;br&gt;
+ &lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.sun.com/java/&quot;&gt;http://www.sun.com/java/&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+II. DESCRIPTION&lt;br&gt;
+&lt;br&gt;
+Remote exploitation of a buffer overflow vulnerability in Oracle Corp.'s&lt;br&gt;
+(formerly Sun Microsystems Inc.) Java Runtime Environment (JRE)...&lt;br&gt;</description>
+    <pubDate>Wed, 31 Mar 2010 18:54:20 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Mar/265</guid>
+  </item>
+  <item>
+    <title>BitComet &lt;= 1.19 Remote DOS Exploit</title>
+    <link>http://seclists.org/bugtraq/2010/Mar/264</link>
+    <description>&lt;p&gt;Posted by Pierre Noguès on Mar 31&lt;/p&gt;#!/bin/sh&lt;br&gt;
+#&lt;br&gt;
+# BitComet &amp;lt;= 1.19 Remote DOS Exploit&lt;br&gt;
+# Pierre Nogues - &lt;a  rel=&quot;nofollow&quot; href=&quot;http://www.indahax.com/&quot;&gt;http://www.indahax.com/&lt;/a&gt;&lt;br&gt;
+#&lt;br&gt;
+# Description:&lt;br&gt;
+#     BitComet is a torrent client&lt;br&gt;
+#&lt;br&gt;
+#     BitComet doesn't handle malicious DHT packet with an invalid bencoded message.&lt;br&gt;
+#&lt;br&gt;
+# Affected versions :&lt;br&gt;
+#     BitComet &amp;lt;= 1.19&lt;br&gt;
+#&lt;br&gt;
+# Plateforms :&lt;br&gt;
+#     Windows&lt;br&gt;
+#&lt;br&gt;
+# Usage :&lt;br&gt;
+#     ./exploit.sh ip port&lt;br&gt;
+&lt;br&gt;
+if [ $# -ne 2 ]; then&lt;br&gt;
+     echo &amp;quot;./exploit.sh ip port&amp;quot;&lt;br&gt;
+     exit 1&lt;br&gt;
+fi&lt;br&gt;
+&lt;br&gt;
+nc -u $1 $2...&lt;br&gt;</description>
+    <pubDate>Wed, 31 Mar 2010 18:44:23 GMT</pubDate>
+    <guid isPermaLink="true">http://seclists.org/bugtraq/2010/Mar/264</guid>
+  </item>
+
+ 
+
+<!-- MHonArc v2.6.16 -->
+  </channel>
+</rss>
