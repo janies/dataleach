@@ -126,8 +126,14 @@ class ScrubReg(object):
                      self.reg)
 
     def scrub(self, input):
-        input = input.lower()
         if isinstance(input, str):
+            input = input.lower()
+            removeList = re.findall(self.reg, input)
+        elif isinstance(input, list):
+            o = ""
+            for l in input:
+                o += "%s\n" % l
+            input = o
             removeList = re.findall(self.reg, input)
         else:
             removeList = []
@@ -143,7 +149,6 @@ class ScrubReg(object):
 
             debugMsg += "%d" % len(input)
             logger.debug(debugMsg)
-
         return input
 
 

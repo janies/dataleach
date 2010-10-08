@@ -22,6 +22,7 @@ __all__ = (
     "RSYNC_SOURCE",
     "RSS_SOURCE",
     "NAME_FORMAT",
+    "REVERSE_ORDER",
     "DEFAULT_NAME_FORMAT",
 )
 
@@ -34,6 +35,7 @@ WEB_SOURCE = "WEB_SOURCE"
 RSYNC_SOURCE = "RSYNC_SOURCE"
 RSS_SOURCE = "RSS_SOURCE"
 NAME_FORMAT = "NAME_FORMAT"
+REVERSE_ORDER = "REVERSE_ORDER"
 
 # With no options the format that weill be used for output files
 DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
@@ -41,7 +43,7 @@ DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
 # The list of possible configuration variables
 CONFIGURATION_VAR_LIST = set(["FILTER_STRING", "SEARCH_STRING",
                               "OUTPUT_DIRECTORY", "SOURCE_TYPE",
-                              "NAME_FORMAT"])
+                              "NAME_FORMAT", "REVERSE_ORDER"])
 
 # String format variables
 FORMAT_STRING_SUB = {"YEAR": "%Y", "MONTH": "%m", "DAY": "%d",
@@ -141,6 +143,18 @@ class Configuration(object):
         else:
             self.search_string = None
 
+        # If there is an ordering use it, otherwise don't.
+        if kargs.has_key(REVERSE_ORDER) and \
+                kargs[REVERSE_ORDER] is not None:
+            val = kargs[REVERSE_ORDER]
+            try:
+                self.reverse = int(val)
+            except ValueError as ve:
+                print ve
+                self.reverse = 0 
+        else:
+            self.reverse = 0
+
         # If there is an output directory, use it, otherwise
         # leave it blank.
         if kargs.has_key(OUTPUT_DIRECTORY):
@@ -180,6 +194,12 @@ class Configuration(object):
         if self.filter_string is None:
             return False
         return True
+
+    def get_reverse(self):
+        """
+        Return the value of reverse
+        """
+        return self.reverse
 
     def get_output_directory(self):
         """

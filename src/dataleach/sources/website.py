@@ -56,13 +56,22 @@ class WebSite(object):
         #print html[:100]
         self.webData = html
 	self.bk = html
-        (search, scrub) = self.generate_filters()
-        if scrub is not None:
-            logger.debug("Scrubbing data")
-            self.webData = scrub.scrub(self.webData)
-        if search is not None:
-            logger.debug("Searching data")
-            self.webData = search.keep(self.webData)
+        (search, scrub, reverse) = self.generate_filters()
+        if reverse == 0:
+            if scrub is not None:
+                logger.debug("Scrubbing data")
+                self.webData = scrub.scrub(self.webData)
+            if search is not None:
+                logger.debug("Searching data")
+                self.webData = search.keep(self.webData)
+        else:
+            if search is not None:
+                logger.debug("Searching data")
+                self.webData = search.keep(self.webData)
+            if scrub is not None:
+                logger.debug("Scrubbing data")
+                self.webData = scrub.scrub(self.webData)
+        
         #print "-------"
         #print self.webData[:100]
     
@@ -71,7 +80,7 @@ class WebSite(object):
         Generate the list of filters from the configutation.
         """
         if self.config == None:
-            return (None, None)
+            return (None, None, 0)
         if self.config.has_search():
             search = KeeperReg(self.config.search_string)
         else:
@@ -80,7 +89,7 @@ class WebSite(object):
             scrub = ScrubReg(self.config.filter_string)
         else:
             scrub = None
-        return (search, scrub)
+        return (search, scrub, self.config.get_reverse())
 
     def get_data(self):
         """

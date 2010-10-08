@@ -35,7 +35,7 @@ VALID_SYSTEM_SECTIONS = {
 # The collection of valid source configuration options
 VALID_INDIVIDUAL_SECTIONS = {
     "DETAILS" : ["name", "type", "address"],
-    "PROCESS" : ["filter", "search"],
+    "PROCESS" : ["filter", "search", "reverse_order"],
     "IO" : ["output_dir"],
 }
 
@@ -72,14 +72,14 @@ class ConfigReader(object):
         sections = set(self.configParser.sections())
         listingKeys = set(listing.keys())
         if len(sections - listingKeys) != 0:
-            #print "%s is not valid (%d invalid)" % (sections,
-            #                       len(sections -listingKeys))
+            print "%s is not valid (%d invalid)" % (sections,
+                                   len(sections -listingKeys))
             return False
         for section in sections:
             options = set(self.configParser.options(section))
             listOptions = set(listing[section])
             if len(options - listOptions) != 0:
-                #print "%s -> %s is not valid" % (section, options)
+                print "%s -> %s is not valid" % (section, options)
                 return False
         return True
             
@@ -268,6 +268,7 @@ class IndividualConfig(object):
 
         self.filter = self.config_reader.get("PROCESS", "filter")
         self.search = self.config_reader.get("PROCESS", "search")
+        self.order = self.config_reader.get("PROCESS", "reverse_order")
 
         self.output_dir = self.config_reader.get("IO","OUTPUT_DIR")
         if self.output_dir is None:
@@ -290,5 +291,6 @@ class IndividualConfig(object):
                              SEARCH_STRING=self.search,
                              OUTPUT_DIRECTORY=self.output_dir,
                              SOURCE_TYPE=self.type,
-                             NAME_FORMAT=self.out_format)
+                             NAME_FORMAT=self.out_format,
+                             REVERSE_ORDER=self.order)
         
