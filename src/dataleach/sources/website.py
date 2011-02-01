@@ -26,15 +26,57 @@ class WebSite(object):
     Class representing a website.
     """
     def __init__(self, url, config=None):
-        self.webData = None
-        if isinstance(url, str):
-            self.url = url
-            html = self.retrieve_data()
-        else:
-            self.url = None
-            html = ""
         self.config = config
-        self.process_data(html)
+        self.webData = None
+        if self.config is None or not self.config.has_crawl():
+            self.crawl = False
+        else:
+            self.crawl = True
+        self.toProcess = [url]
+        self.processed = []
+        self.gen_url_filters(url)
+        self.iterate_pages()
+
+    def gen_url_filters(self, url):
+        """
+        Generate the set of filters that we can use to get other URLs
+        from this domain.
+        """
+        if url is not None and isinstance(url, str):
+            url = url.split(".")
+            if len(url) < 2: 
+                self.domainUrl = search.keep("[a-zA-Z\-0-9\.]*%s\..%s[a-zA-Z\-0-9\./]*" % 
+                                             (url[-2], url[-1]))
+            else:
+                self.domainUrl = None
+        else:
+            self.domainUrl = None
+
+    def get_urls(self, data):
+        """
+        Process the page looking for URLs to traverse
+        """
+        if self.domainUrl is not None and data is not None:
+            data = self.domainUrl.keep(data)
+            print data
+
+    def iterate_pages(self):
+        """
+        This iterates through the list of URLS available for use.
+        """
+        for url in self.toProcess:
+            if url not in self.processed:
+                self.processed.append(url)
+                if isinstance(url, str):
+                    self.url = url
+                    html = self.retrieve_data()
+                else:
+                    self.url = None
+                    html = ""
+                if self.crawl:
+                    self.get_urls(html)
+                self.process_data(html)
+            self.toProcess.remove(url)
 
     def retrieve_data(self):
         """
@@ -54,24 +96,27 @@ class WebSite(object):
         and searching.
         """
         #print html[:100]
-        self.webData = html
-	self.bk = html
         (search, scrub, reverse) = self.generate_filters()
         if reverse == 0:
             if scrub is not None:
                 logger.debug("Scrubbing data")
-                self.webData = scrub.scrub(self.webData)
+                html = scrub.scrub(html)
             if search is not None:
                 logger.debug("Searching data")
-                self.webData = search.keep(self.webData)
+                html = search.keep(html)
         else:
             if search is not None:
                 logger.debug("Searching data")
-                self.webData = search.keep(self.webData)
+                html = search.keep(html)
             if scrub is not None:
                 logger.debug("Scrubbing data")
-                self.webData = scrub.scrub(self.webData)
-        
+                html = scrub.scrub(html)
+        if not self.crawl or self.webData is None:
+            self.webData = html
+        elif isinstance(self.webData, str):
+            self.webData += html
+        elif isinstance(self.webData, set):
+            self.webData.append(html)
         #print "-------"
         #print self.webData[:100]
     
@@ -95,6 +140,8 @@ class WebSite(object):
         """
         return the data from the web page
         """
+        #if len(self.webData) == 1:
+        #    return self.webData[0]
         return self.webData
 
     def output_file(self, name):

@@ -56,3 +56,13 @@ class test_websites(unittest.TestCase):
         w.process_data(WEB_DATA)
         self.assertEqual(len(w.get_data()), 1)
         self.assertTrue("127.0.0.1" in w.get_data())
+
+    def test_crawl_enable(self):
+        config = Configuration(CRAWL=1)
+        w = WebSite(None, None)
+        self.assertFalse(w.crawl)
+        w = WebSite(None, config)
+        self.assertTrue(w.crawl)
+        config = Configuration(CRAWL=0)
+        w = WebSite(None, config)
+        self.assertFalse(w.crawl)

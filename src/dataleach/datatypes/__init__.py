@@ -36,6 +36,7 @@ RSYNC_SOURCE = "RSYNC_SOURCE"
 RSS_SOURCE = "RSS_SOURCE"
 NAME_FORMAT = "NAME_FORMAT"
 REVERSE_ORDER = "REVERSE_ORDER"
+CRAWL = "CRAWL"
 
 # With no options the format that weill be used for output files
 DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
@@ -43,7 +44,8 @@ DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
 # The list of possible configuration variables
 CONFIGURATION_VAR_LIST = set(["FILTER_STRING", "SEARCH_STRING",
                               "OUTPUT_DIRECTORY", "SOURCE_TYPE",
-                              "NAME_FORMAT", "REVERSE_ORDER"])
+                              "NAME_FORMAT", "REVERSE_ORDER",
+                              "CRAWL"])
 
 # String format variables
 FORMAT_STRING_SUB = {"YEAR": "%Y", "MONTH": "%m", "DAY": "%d",
@@ -155,6 +157,17 @@ class Configuration(object):
         else:
             self.reverse = 0
 
+        # If we need to crawl, do it.
+        if kargs.has_key(CRAWL) and \
+            kargs[CRAWL] is not None:
+            val = kargs[CRAWL]
+            if int(val) == 1:
+                self.crawl = True
+            else:
+                self.crawl = False
+        else:
+            self.crawl = False
+
         # If there is an output directory, use it, otherwise
         # leave it blank.
         if kargs.has_key(OUTPUT_DIRECTORY):
@@ -186,6 +199,12 @@ class Configuration(object):
         if self.search_string is None:
             return False
         return True
+
+    def has_crawl(self):
+        """
+        Return the value of crawl
+        """
+        return self.crawl
 
     def has_filter(self):
         """
