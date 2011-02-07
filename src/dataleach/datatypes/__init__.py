@@ -37,6 +37,7 @@ RSS_SOURCE = "RSS_SOURCE"
 NAME_FORMAT = "NAME_FORMAT"
 REVERSE_ORDER = "REVERSE_ORDER"
 CRAWL = "CRAWL"
+DOMAIN_BASE="DOMAIN_BASE"
 
 # With no options the format that weill be used for output files
 DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
@@ -45,7 +46,7 @@ DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
 CONFIGURATION_VAR_LIST = set(["FILTER_STRING", "SEARCH_STRING",
                               "OUTPUT_DIRECTORY", "SOURCE_TYPE",
                               "NAME_FORMAT", "REVERSE_ORDER",
-                              "CRAWL"])
+                              "CRAWL", "DOMAIN_BASE"])
 
 # String format variables
 FORMAT_STRING_SUB = {"YEAR": "%Y", "MONTH": "%m", "DAY": "%d",
@@ -168,6 +169,14 @@ class Configuration(object):
         else:
             self.crawl = False
 
+        # If we have a domain base we track it.
+        if kargs.has_key(DOMAIN_BASE) and \
+            kargs[DOMAIN_BASE] is not None:
+            val = kargs[DOMAIN_BASE]
+            self.domain_base = val
+        else:
+            self.domain_base = None
+
         # If there is an output directory, use it, otherwise
         # leave it blank.
         if kargs.has_key(OUTPUT_DIRECTORY):
@@ -192,6 +201,14 @@ class Configuration(object):
         else:
             self.name_format = Format(None)
 
+    def has_domainbase(self):
+        """
+        Return true if there is a defined domainbase
+        """
+        if self.domain_base is None:
+            return False
+        return True
+
     def has_search(self):
         """
         Return True if there is a search string.
@@ -213,6 +230,9 @@ class Configuration(object):
         if self.filter_string is None:
             return False
         return True
+
+    def get_domainbase(self):
+        return self.domain_base
 
     def get_reverse(self):
         """
