@@ -19,7 +19,10 @@ from dataleach.sources.website import WebSite
 #logging.basicConfig(level=logging.ERROR, stream=sys.stderr,
 #                    format="%(message)s")
 
-
+WEB_SITE = ("<html>Hello World <a href=\"www.google.com/help\")> g </a>" +
+            "<a    href =   www.google.com/mail?name=\" \"> a </a>" +
+            "<a  href = https://mail.google.com/ > mail </a>" +
+            "</html>")
 WEB_DATA = ("<html>Hello World. There is no place like " +
             "<a href=\"192.168.1.1\">127.0.0.1</a>.</html>")
 NO_HTML =" hello world. there is no place like  127.0.0.1 . " 
@@ -58,7 +61,7 @@ class test_websites(unittest.TestCase):
         self.assertTrue("127.0.0.1" in w.get_data())
 
     def test_crawl_enable(self):
-        config = Configuration(CRAWL=1)
+        config = Configuration(CRAWL=1, DOMAIN_BASE="")
         w = WebSite(None, None)
         self.assertFalse(w.crawl)
         w = WebSite(None, config)
@@ -66,3 +69,14 @@ class test_websites(unittest.TestCase):
         config = Configuration(CRAWL=0)
         w = WebSite(None, config)
         self.assertFalse(w.crawl)
+
+    def test_find_urls(self):
+        sites = ["www.google.com/help",
+                 "www.google.com/mail",
+                 "mail.google.com"]
+        w = WebSite(None, None)
+        w.domainBase = "google.com"
+        w.get_urls(WEB_SITE)
+        for site in sites:
+            self.assertTrue(site in w.toProcess)
+        self.assertTrue(w is not None)

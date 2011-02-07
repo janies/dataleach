@@ -10,6 +10,8 @@
 import sys
 import os
 import logging
+import re
+import urlparse
 
 from dataleach.process.keeper import Keeper, KeeperReg
 from dataleach.process.scrubber import Scrubber, ScrubReg
@@ -28,37 +30,44 @@ class WebSite(object):
     def __init__(self, url, config=None):
         self.config = config
         self.webData = None
-        if self.config is None or not self.config.has_crawl():
-            self.crawl = False
-        else:
+        self.crawl = False
+        self.domainBase = None
+        self.get_hrefs = KeeperReg("href\s*=\s*[^ <>]*[a-zA-Z0-9]")
+        if self.config is not None and self.config.has_crawl() and \
+           self.config.has_domainbase():
             self.crawl = True
+            self.domainBase = self.config.get_domainbase()
         self.toProcess = [url]
         self.processed = []
-        self.gen_url_filters(url)
         self.iterate_pages()
-
-    def gen_url_filters(self, url):
-        """
-        Generate the set of filters that we can use to get other URLs
-        from this domain.
-        """
-        if url is not None and isinstance(url, str):
-            url = url.split(".")
-            if len(url) < 2: 
-                self.domainUrl = search.keep("[a-zA-Z\-0-9\.]*%s\..%s[a-zA-Z\-0-9\./]*" % 
-                                             (url[-2], url[-1]))
-            else:
-                self.domainUrl = None
-        else:
-            self.domainUrl = None
 
     def get_urls(self, data):
         """
         Process the page looking for URLs to traverse
         """
-        if self.domainUrl is not None and data is not None:
-            data = self.domainUrl.keep(data)
-            print data
+        if self.get_hrefs is not None and data is not None:
+            for url in self.get_hrefs.keep(data):
+                # This is removing junk from the string.  It needs to be
+                # cleaner.
+                parsed = urlparse.urlparse(url)
+                url = parsed.netloc + parsed.path
+                url = url.replace("href", "")
+                url = url.replace("=", "")
+                url = url.replace("\"", "")
+                url = url.replace('\\','')
+                url = url.replace("http://", "")
+                url = url.replace("https://", "")
+                url = url.strip()
+                #print "%s = %s + %s" % (url, parsed.netloc, parsed.path)
+                if url not in self.toProcess and \
+                   url not in self.processed:
+                    if self.domainBase is not None:
+                        if url.rfind(self.domainBase) != -1 and \
+                           url.rfind("@%s" % self.domainBase) == -1:
+                            self.toProcess.append(url)
+                    else:
+                        self.toProcess.append(url)
+                    
 
     def iterate_pages(self):
         """
@@ -172,11 +181,14 @@ class WebSite(object):
 def main():
     logging.basicConfig(level=logging.DEBUG, stream=sys.stderr,
                         format="%(message)s")
-    config = Configuration(FILTER_STRING=r"<.*?>")
-    a = WebSite("http://www.google.com", config)
+    config = Configuration(FILTER_STRING=r"<.*?>", CRAWL=1, 
+                           DOMAIN_BASE=sys.argv[2])
+    a = WebSite(sys.argv[1], config)
     print "______________________________"
     print a.get_data()
     print "______________________________"
+    for url in a.processed:
+        print url
 
 if __name__ == "__main__":
     main()
