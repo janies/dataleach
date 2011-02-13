@@ -37,7 +37,8 @@ RSS_SOURCE = "RSS_SOURCE"
 NAME_FORMAT = "NAME_FORMAT"
 REVERSE_ORDER = "REVERSE_ORDER"
 CRAWL = "CRAWL"
-DOMAIN_BASE="DOMAIN_BASE"
+DOMAIN_BASE = "DOMAIN_BASE"
+MAX_PAGE_COUNT = "MAX_PAGE_COUNT"
 
 # With no options the format that weill be used for output files
 DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
@@ -46,7 +47,8 @@ DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
 CONFIGURATION_VAR_LIST = set(["FILTER_STRING", "SEARCH_STRING",
                               "OUTPUT_DIRECTORY", "SOURCE_TYPE",
                               "NAME_FORMAT", "REVERSE_ORDER",
-                              "CRAWL", "DOMAIN_BASE"])
+                              "CRAWL", "DOMAIN_BASE",
+                              "MAX_PAGE_COUNT"])
 
 # String format variables
 FORMAT_STRING_SUB = {"YEAR": "%Y", "MONTH": "%m", "DAY": "%d",
@@ -201,6 +203,12 @@ class Configuration(object):
         else:
             self.name_format = Format(None)
 
+        if kargs.has_key(MAX_PAGE_COUNT):
+            val = kargs[MAX_PAGE_COUNT]
+            self.max_page_count = int(val)
+        else:
+            self.max_page_count = 1
+
     def has_domainbase(self):
         """
         Return true if there is a defined domainbase
@@ -208,6 +216,8 @@ class Configuration(object):
         if self.domain_base is None:
             return False
         return True
+    def get_domainbase(self):
+        return self.domain_base
 
     def has_search(self):
         """
@@ -258,12 +268,21 @@ class Configuration(object):
         """
         return self.name_format
 
+    def get_max_page_count(self):
+        """
+        Return the Max page count
+        """
+        return self.max_page_count
+
     def __eq__(self, other):
         if isinstance(other, Configuration) and \
               self.source_type == other.source_type and \
               self.output_directory == other.output_directory and \
               self.filter_string == other.filter_string and \
-              self.search_string == other.search_string:
+              self.search_string == other.search_string and \
+              self.domain_base == other.domain_base and \
+              self.crawl == other.crawl and \
+              self.max_page_count == other.max_page_count:
             return True
         return False
 

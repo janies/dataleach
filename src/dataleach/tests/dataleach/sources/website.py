@@ -71,12 +71,28 @@ class test_websites(unittest.TestCase):
         self.assertFalse(w.crawl)
 
     def test_find_urls(self):
-        sites = ["www.google.com/help",
-                 "www.google.com/mail",
-                 "mail.google.com"]
+        sites = ["http://www.google.com/help",
+                 "http://www.google.com/mail",
+                 "https://mail.google.com"]
         w = WebSite(None, None)
         w.domainBase = "google.com"
+        w.max_page_count=10
         w.get_urls(WEB_SITE)
         for site in sites:
             self.assertTrue(site in w.toProcess)
         self.assertTrue(w is not None)
+
+    def test_page_count(self):
+        w = WebSite(None, None)
+        w.domainBase = "google.com"
+        w.max_page_count = 2
+        w.get_urls(WEB_SITE)
+        self.assertEqual(w.max_page_count, 0)
+        self.assertEqual(len(w.toProcess), 2)
+
+    def test_url_parsing_from_config(self):
+        w = WebSite(None, Configuration(DOMAIN_BASE = "google.com",
+                          MAX_PAGE_COUNT = 10))
+        w.get_urls(WEB_SITE)
+        self.assertEqual(w.max_page_count, 6)
+        self.assertEqual(len(w.toProcess) + len(w.processed), 4)
