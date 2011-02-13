@@ -76,7 +76,7 @@ class DataLeach(object):
                    (type, config.get_in_dir()))
             sys.exit(2)
         for source in sources:
-            #print source
+            logger.warning("Processing: %s" % (source.get_config_name()))
             self.process_source(source.address, source.get_configuration())
 
     def process_source(self, url, config):
