@@ -23,6 +23,9 @@ __all__ = (
     "RSS_SOURCE",
     "NAME_FORMAT",
     "REVERSE_ORDER",
+    "CRAWL",
+    "DOMAIN_BASE",
+    "MAX_PAGE_COUNT",
     "DEFAULT_NAME_FORMAT",
 )
 
@@ -203,7 +206,8 @@ class Configuration(object):
         else:
             self.name_format = Format(None)
 
-        if kargs.has_key(MAX_PAGE_COUNT):
+        if kargs.has_key(MAX_PAGE_COUNT) and \
+           kargs[MAX_PAGE_COUNT] is not None:
             val = kargs[MAX_PAGE_COUNT]
             self.max_page_count = int(val)
         else:

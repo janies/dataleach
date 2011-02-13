@@ -15,6 +15,7 @@ from dataleach.datatypes import *
 CONFIG_FILE = "testData/config/testConfig.conf"
 SYS_CONFIG_FILE = "testData/config/sys.conf"
 BAD_INDIV_FILE = "testData/config/badindividual.conf"
+GOOD_CONFIG = "testData/config/goodwebsite.conf"
 
 
 class test_config_error(unittest.TestCase):
@@ -68,6 +69,19 @@ class test_config_error(unittest.TestCase):
         except Exception as inst:
             self.assertTrue(isinstance(inst, ConfigError))
 
+    def test_good_config(self):
+        a = None
+        c = None
+        try:
+            a = IndividualConfig(GOOD_CONFIG)
+            c = a.get_configuration()
+            self.assertTrue(c.has_crawl())
+            self.assertEqual(c.get_domainbase(), "google.com")
+            self.assertEqual(c.get_max_page_count(), 50)
+
+        except Exception as inst:
+            print inst
+            self.fail()
     def test_options(self):
         inDir = (os.path.abspath(os.curdir) + "/" +
                  "testData/config/indiv")
