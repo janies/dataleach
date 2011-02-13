@@ -32,14 +32,23 @@ class WebSite(object):
         self.webData = None
         self.crawl = False
         self.domainBase = None
-        self.get_hrefs = KeeperReg("href\s*=\s*[^ <>]*[a-zA-Z0-9]")
-        if self.config is not None and self.config.has_crawl() and \
-           self.config.has_domainbase():
-            self.crawl = True
+        self.max_page_count = 1
+        if config is not None:
+            self.crawl = self.config.has_crawl()
             self.domainBase = self.config.get_domainbase()
+            self.max_page_count = self.config.get_max_page_count()
+        self.get_hrefs = KeeperReg("href\s*=\s*[^ <>]*[a-zA-Z0-9]")
         self.toProcess = [url]
+        self.max_page_count -= 1
         self.processed = []
         self.iterate_pages()
+
+    def get_next(self):
+        if len(self.toProcess) > 0:
+            out = self.toProcess.pop()
+            self.processed.append(out)
+            return out
+        return None
 
     def get_urls(self, data):
         """
@@ -49,43 +58,48 @@ class WebSite(object):
             for url in self.get_hrefs.keep(data):
                 # This is removing junk from the string.  It needs to be
                 # cleaner.
-                parsed = urlparse.urlparse(url)
-                url = parsed.netloc + parsed.path
+                #print "Start: %s" % url
                 url = url.replace("href", "")
                 url = url.replace("=", "")
                 url = url.replace("\"", "")
                 url = url.replace('\\','')
-                url = url.replace("http://", "")
-                url = url.replace("https://", "")
                 url = url.strip()
-                #print "%s = %s + %s" % (url, parsed.netloc, parsed.path)
+                parsed = urlparse.urlparse(url)
+                url = ("http" if len(parsed.scheme) == 0 else parsed.scheme)  + \
+                    "://" + parsed.netloc + parsed.path
                 if url not in self.toProcess and \
-                   url not in self.processed:
+                   url not in self.processed and \
+                   self.max_page_count > 0:
                     if self.domainBase is not None:
                         if url.rfind(self.domainBase) != -1 and \
                            url.rfind("@%s" % self.domainBase) == -1:
                             self.toProcess.append(url)
+                            self.max_page_count -= 1
                     else:
                         self.toProcess.append(url)
+                        self.max_page_count -= 1
                     
 
     def iterate_pages(self):
         """
         This iterates through the list of URLS available for use.
         """
-        for url in self.toProcess:
-            if url not in self.processed:
-                self.processed.append(url)
-                if isinstance(url, str):
-                    self.url = url
-                    html = self.retrieve_data()
-                else:
-                    self.url = None
-                    html = ""
-                if self.crawl:
-                    self.get_urls(html)
-                self.process_data(html)
-            self.toProcess.remove(url)
+        url = self.get_next()
+        while url is not None:
+            logger.debug("toProcess: %s" % self.toProcess)
+            logger.debug("Processed: %s" % self.processed)
+            logger.debug("processing: %s" % url)
+            #self.processed.append(url)
+            if isinstance(url, str):
+                self.url = url
+                html = self.retrieve_data()
+            else:
+                self.url = None
+                html = ""
+            if self.crawl:
+                self.get_urls(html)
+            self.process_data(html)
+            url = self.get_next()
 
     def retrieve_data(self):
         """
@@ -123,7 +137,7 @@ class WebSite(object):
         if not self.crawl or self.webData is None:
             self.webData = html
         elif isinstance(self.webData, str):
-            self.webData += html
+            self.webData += "\n\n####\n\n" + html
         elif isinstance(self.webData, set):
             self.webData.append(html)
         #print "-------"
@@ -151,6 +165,8 @@ class WebSite(object):
         """
         #if len(self.webData) == 1:
         #    return self.webData[0]
+        if self.webData is None:
+            return ""
         return self.webData
 
     def output_file(self, name):
@@ -179,16 +195,26 @@ class WebSite(object):
 
 
 def main():
-    logging.basicConfig(level=logging.DEBUG, stream=sys.stderr,
-                        format="%(message)s")
-    config = Configuration(FILTER_STRING=r"<.*?>", CRAWL=1, 
-                           DOMAIN_BASE=sys.argv[2])
+    #logging.basicConfig(level=logging.DEBUG, stream=sys.stderr,
+    #                    format="%(message)s")
+    config = Configuration(CRAWL=1, 
+                           DOMAIN_BASE=sys.argv[2],
+                           MAX_PAGE_COUNT=10)
     a = WebSite(sys.argv[1], config)
     print "______________________________"
     print a.get_data()
     print "______________________________"
+    print "Processed"
+    count = 0
     for url in a.processed:
-        print url
+        count += 1
+        print "%d) %s" % (count, url)
+    print "To Process"
+    count = 0
+    for url in a.toProcess:
+        count += 1
+        print "%d) %s" % (count, url)
+    print a.max_page_count
 
 if __name__ == "__main__":
     main()
