@@ -34,6 +34,9 @@ class DataLeach(object):
     The class defining the data leach system.
     """
     def __init__(self, args):
+        """
+        Declare a DataLeach.
+        """
         self.configFile = None
         self.parse_options()
         if self.configFile is None:

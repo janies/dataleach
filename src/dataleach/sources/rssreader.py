@@ -23,6 +23,9 @@ from dataleach.datatypes import *
 
 logger = logging.getLogger("dataleach.sources.rssreader")
 class KeyNotFoundException(Exception):
+    """
+    Exception for handling if an XML key is not found.
+    """
     def __init__(self, value):
         self.value = value
 
@@ -34,6 +37,9 @@ class RSSReader(object):
     Class representing an rss feed.
     """
     def __init__(self, url, config=None):
+        """
+        Define an RSSReader.
+        """
         self.config = config
         self.url = url
         try:
@@ -45,13 +51,13 @@ class RSSReader(object):
 
     def get_date(self):
         """
-        Return the Date the data was retrieved.
+        @return: The date the data was retrieved.
         """
         return self.date
 
     def get_highest_level_keys(self):
         """
-        Get the highest level of the fields.
+        @return: The highest level of the fields.
         """
         return self.feed.keys()
 
@@ -65,7 +71,7 @@ class RSSReader(object):
         object of interst. Note, if the keylist goes through a 
         list object, the index is used as the key.
 
-        Return the object or raise an exception if the path is invalid.
+        @return: The object or raise an exception if the path is invalid.
         """
         if isinstance(keys, list):
             cur = self.feed
@@ -83,20 +89,20 @@ class RSSReader(object):
 
     def get_feed(self):
         """
-        Return the raw feed obtained by feedparser.  This should not be used
-        by the user, except for debugging.
+        @return: The raw feed obtained by feedparser.
+        I{This should not be used by the user, except for debugging.}
         """
         return self.feed
 
     def get_url(self):
         """
-        Return the URL from which we are feeding
+        @return: The URL from which we are feeding
         """
         return self.url
 
     def get_num_entries(self):
         """
-        Return the number of entries obtained.
+        @return: The number of entries obtained.
         """
         if self.has_entries():
             return len(self.get(["entries"]))
@@ -130,6 +136,9 @@ class RSSReader(object):
         return d
  
     def __str__(self):
+        """
+        @return: String representing the RSSReader.
+        """
         def recurs_str(cur, tabs, keylist):
             line = ""
             if isinstance(cur, list):
@@ -151,6 +160,11 @@ class RSSReader(object):
         return line
  
     def output_file(self, name):
+        """
+        Generate a text output file.
+
+        @param name: The base name of the file to be created.
+        """
         entries = self.get_entries()
         count = 0
         for t in entries.keys():

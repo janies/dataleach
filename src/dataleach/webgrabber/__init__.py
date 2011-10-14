@@ -49,20 +49,39 @@ class WebGrabber(object):
 
     def get_data(self):
         """
-        Return the data retrieved from a web page.
+        @return: The data retrieved from a web page as a string.
         """
         return self.data
 
     def done(self):
+        """
+        called when a webpage conpletes processing.
+
+        @return: True
+        """
         return not self.failed
 
     def __eq__(self, other):
+        """
+        Is the webpage equal to other.
+
+        @param other: The WebGrabber to be compared to this instance.
+
+        @return: True if other is equal to this instance
+        """
         if isinstance(other, WebGrabber):
             if self.url == other.url and self.data == other.data:
                 return True
         return False
 
     def __ne__(self, other):
+        """
+        Is the webpage not equal to other.
+
+        @param other: The WebGrabber to be compared to this instance.
+
+        @return: True if other is not equal to this instance
+        """
         return not self.__eq__(other)
 
 def main():
