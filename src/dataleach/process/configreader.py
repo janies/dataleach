@@ -26,19 +26,18 @@ __all__ = (
 
 logger = logging.getLogger("dataleach.process.configreader")
 
-# The collection of valid system configuration options
+
 VALID_SYSTEM_SECTIONS = {
     "INPUT" : ["dir", "extension"],
     "OUTPUT" :["dir","format"],
-}
+} #: The collection of valid system configuration options
 
-# The collection of valid source configuration options
 VALID_INDIVIDUAL_SECTIONS = {
     "DETAILS" : ["name", "type", "address"],
     "PROCESS" : ["filter", "search", "reverse_order", "crawl",
                  "domain_base", "max_page_count"],
     "IO" : ["output_dir"],
-}
+} #: The collection of valid source configuration options
 
 
 class ConfigError(Exception):
@@ -46,9 +45,15 @@ class ConfigError(Exception):
     Error class for configurations.
     """
     def __init__(self, error):
+        """
+        Define a ConfigError
+        """
         self.error = error
 
     def __str__(self):
+        """
+        @return: String object
+        """
         return "Configuration Error: %s" % \
             self.error
 
@@ -58,6 +63,11 @@ class ConfigReader(object):
     """
 
     def __init__(self, configFile):
+        """
+        Declare a ConfigReader
+
+        @param configFile: The name of the file containing the configuration
+        """
         self.configParser = SafeConfigParser()
         self.configFile = configFile
         if configFile not in self.configParser.read(self.configFile):
@@ -111,13 +121,13 @@ class ConfigReader(object):
 
     def get_configFile(self):
         """
-        Return the configuration file currently loaded.
+        @return: The configuration file currently loaded.
         """
         return self.configFile
 
     def get_config_list(self):
         """
-        Return a list of configuration options represented in the
+        @return: A list of configuration options represented in the
         configuration file.
         """
         return self.configList
@@ -129,6 +139,11 @@ class SystemConfig(object):
     A system configuration is the actual application configuration.
     """
     def __init__(self, configFile):
+        """
+        Declare a SystemConfig
+
+        @param configFile: The name of the file containing the configuration
+        """
         self.config_reader = ConfigReader(configFile)
         if not self.config_reader.valid(VALID_SYSTEM_SECTIONS):
             raise ConfigError, \
@@ -195,7 +210,7 @@ class SystemConfig(object):
 
     def get_out_dir(self):
         """
-        Return the output directory we will use by default.
+        @return: The output directory we will use by default.
         """
         return self.out_dir
 
@@ -209,13 +224,13 @@ class SystemConfig(object):
 
     def get_sources(self):
         """
-        Return the list of sources
+        @return: The list of sources
         """
         return self.sources
 
     def get_file_extension(self):
         """
-        Return the file extension we identify as being source
+        @return: The file extension we identify as being source
         configuration files.
         """
         return self.file_extension
@@ -234,6 +249,12 @@ class IndividualConfig(object):
     Helper class representing and parsing srouce configurations.
     """
     def __init__(self, configFile, format=DEFAULT_NAME_FORMAT):
+        """
+        Declare an IndividualConfig
+
+        @param configFile: the name of the configuration file
+        @param format: The name format sting to use
+        """
         self.config_name = configFile
         self.config_reader = ConfigReader(configFile)
         self.out_format = format
@@ -283,13 +304,13 @@ class IndividualConfig(object):
 
     def get_config_name(self):
         """
-        Return the name of the configuration file.
+        @return: The name of the configuration file.
         """
         return self.config_name
 
     def get_configuration(self):
         """
-        Generate a L{Configuration} out of the file representations. 
+        @return: A L{Configuration} out of the file representations. 
         """
         return Configuration(FILTER_STRING=self.filter,
                              SEARCH_STRING=self.search,

@@ -28,6 +28,9 @@ class WebSite(object):
     Class representing a website.
     """
     def __init__(self, url, config=None):
+        """
+        Define a WebSite.
+        """
         self.config = config
         self.webData = None
         self.crawl = False
@@ -44,6 +47,9 @@ class WebSite(object):
         self.iterate_pages()
 
     def get_next(self):
+        """
+        @return: The next URL in the list.
+        """
         if len(self.toProcess) > 0:
             out = self.toProcess.pop()
             self.processed.append(out)
@@ -53,6 +59,8 @@ class WebSite(object):
     def get_urls(self, data):
         """
         Process the page looking for URLs to traverse
+
+        @param data: The raw webpage text.
         """
         if self.get_hrefs is not None and data is not None:
             for url in self.get_hrefs.keep(data):
@@ -82,7 +90,7 @@ class WebSite(object):
 
     def iterate_pages(self):
         """
-        This iterates through the list of URLS available for use.
+        Iterate through the list of URLS available for use.
         """
         url = self.get_next()
         while url is not None:
@@ -161,7 +169,7 @@ class WebSite(object):
 
     def get_data(self):
         """
-        return the data from the web page
+        @return: The data from the web page
         """
         #if len(self.webData) == 1:
         #    return self.webData[0]

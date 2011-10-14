@@ -21,13 +21,18 @@ __all__ = (
 
 logger = logging.getLogger("dataleach.process.keeper")
 
-WORD = r"[a-zA-Z0-9\.]+"
+WORD = r"[a-zA-Z0-9\.]+" #: Regex string representing a word.
 
 class KeeperList(object):
     """
     Helper class representing a collection of keeper phrases to keep.
     """
     def __init__(self, l):
+        """
+        Define instance of a KeeperList
+
+        @param l: A L{dataleach.datatypes.WordSet}.
+        """
         if isinstance(l, WordSet):
             self.keeperList = l.to_set()
         else:
@@ -47,6 +52,9 @@ class KeeperList(object):
                 output.add("%s" % val)
         return output
     def __str__(self):
+        """
+        @return: A string of the KeeperList
+        """
         l = ""
         for word in self.keeperList:
             l += "  \"%s\"\n" % (word)
@@ -58,6 +66,11 @@ class Keeper(object):
     text.
     """
     def __init__(self, sl):
+        """
+        Define a Kepper.
+
+        @param sl: A L{dataleach.datatypes.WordSet}
+        """
         self.scrubs = []
         if isinstance(sl, WordSet):
             sl = [sl]
@@ -85,6 +98,9 @@ class Keeper(object):
         return output
 
     def __str__(self):
+        """
+        @return: A string representing the Keeper
+        """
         l = ""
         count = 0
         for r in self.scrubs:
@@ -99,12 +115,22 @@ class KeeperReg(object):
     L{Keeper} class.
     """
     def __init__(self, reg):
+        """
+        Define a KepperReg.
+
+        @param reg: A string representing the regular expression.
+        """
         if isinstance(reg, str):
             self.reg = reg
         else:
             self.reg = ""
 
     def keep(self, input):
+        """
+        Return a set of values that match the KeeperReg.
+
+        @param input: The text to be searched.
+        """
         if isinstance(input, str):
             keepList = re.findall(self.reg, input.lower())
         else:

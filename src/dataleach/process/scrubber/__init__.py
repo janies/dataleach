@@ -25,9 +25,9 @@ __all__ = (
 
 logger = logging.getLogger("dataleach.process.scrubber")
 
-WORD = r"[a-zA-Z0-9]+"
+WORD = r"[a-zA-Z0-9]+"  #: Regex string describing a word.
 
-ARTICLES = WordSet(["a", "an", "the"])
+ARTICLES = WordSet(["a", "an", "the"]) #: English articales
 
 PREPOSITIONS = WordSet(["aboard","about","above","across","after","against","along",
                     "amid","among","anti","around","as","at","before","behind",
@@ -53,13 +53,18 @@ CORELATIVE_CONJUNCTIONS = WordSet(["both", "and", "not only", "but also", "eithe
 CONJUNCTIONS = (COORDINATING_CONJUNCTIONS | SUBORDINATING_CONJUNCTIONS | CORELATIVE_CONJUNCTIONS)
 
 SECURITY_TITLE = WordSet(["bugtraq", "security", "vulnerability", "vulnerabilities",
-                      "vuln", "re", "internet", "announce", "bulletin", "news"])
+                      "vuln", "re", "internet", "announce", "bulletin", "news"]) #: Titles of known security terms
 
 class ScrubList(object):
     """
     Helper class representing a collection of L{Scruber} phrases to remove.
     """
     def __init__(self, l):
+        """
+        Define a scrubber list.
+
+        @define l: A L{dataleach.datatypes.WordSet}
+        """
         if isinstance(l, WordSet):
             self.removeList = l.to_set()
         else:
@@ -68,7 +73,7 @@ class ScrubList(object):
 
     def remover(self, input):
         """
-        Print the supplied text with all of the  L{Scrubber}s from the list
+        Print the supplied text with all of the  L{dataleach.scrubber.Scrubber}s from the list
         removed.
 
         @param input: The text to be searched.
@@ -88,6 +93,11 @@ class Scrubber(object):
     text.
     """
     def __init__(self, sl):
+        """
+        Define Scrubber
+
+        @param sl: A L{dataleach.datatype.ScrubList}
+        """
         self.scrubs = []
         if isinstance(sl, WordSet):
             sl = [sl]
@@ -118,6 +128,11 @@ class ScrubReg(object):
     L{Scrubber} class.
     """
     def __init__(self, reg):
+        """
+        Define a ScrubReg.
+
+        @param reg: A string
+        """
         if isinstance(reg, str):
             self.reg = reg
         else:
@@ -126,6 +141,11 @@ class ScrubReg(object):
                      self.reg)
 
     def scrub(self, input):
+        """
+        Return the text all scrubbed values removed.
+
+        @param input: The text to be searched.
+        """
         if isinstance(input, str):
             input = input.lower()
             removeList = re.findall(self.reg, input)

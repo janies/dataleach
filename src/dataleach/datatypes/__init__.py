@@ -30,45 +30,49 @@ __all__ = (
 )
 
 # List of possible configuration variables
-FILTER_STRING = "FILTER_STRING"
-SEARCH_STRING = "SEARCH_STRING"
-OUTPUT_DIRECTORY = "OUTPUT_DIRECTORY"
-SOURCE_TYPE = "SOURCE_TYPE"
-WEB_SOURCE = "WEB_SOURCE"
-RSYNC_SOURCE = "RSYNC_SOURCE"
-RSS_SOURCE = "RSS_SOURCE"
-NAME_FORMAT = "NAME_FORMAT"
-REVERSE_ORDER = "REVERSE_ORDER"
-CRAWL = "CRAWL"
-DOMAIN_BASE = "DOMAIN_BASE"
-MAX_PAGE_COUNT = "MAX_PAGE_COUNT"
 
-# With no options the format that weill be used for output files
-DEFAULT_NAME_FORMAT = "%Y%m%d.%H"
+FILTER_STRING = "FILTER_STRING" #: Filter string configuration variable name
+SEARCH_STRING = "SEARCH_STRING" #: Search String configuration variable name
+OUTPUT_DIRECTORY = "OUTPUT_DIRECTORY" #: Output directory configuration variable name
+SOURCE_TYPE = "SOURCE_TYPE"     #: Source type configuration variable name
+WEB_SOURCE = "WEB_SOURCE"       #: Web Source configuration variable name
+RSYNC_SOURCE = "RSYNC_SOURCE"   #: RSYNC Source configuration variable name
+RSS_SOURCE = "RSS_SOURCE"       #: RSS Source configuration variable name
+NAME_FORMAT = "NAME_FORMAT"     #: Name Format configuration variable name
+REVERSE_ORDER = "REVERSE_ORDER" #: Reverse order configuration variable name
+CRAWL = "CRAWL"                 #: Crawl configuration variable name
+DOMAIN_BASE = "DOMAIN_BASE"     #: Domain base configuration variable name
+MAX_PAGE_COUNT = "MAX_PAGE_COUNT" #: Max page count configuration variable name
 
-# The list of possible configuration variables
+# With no options the format that will be used for output files
+DEFAULT_NAME_FORMAT = "%Y%m%d.%H" #: format of output file names
+
+
 CONFIGURATION_VAR_LIST = set(["FILTER_STRING", "SEARCH_STRING",
                               "OUTPUT_DIRECTORY", "SOURCE_TYPE",
                               "NAME_FORMAT", "REVERSE_ORDER",
                               "CRAWL", "DOMAIN_BASE",
-                              "MAX_PAGE_COUNT"])
-
-# String format variables
+                              "MAX_PAGE_COUNT"]) #: The list of possible configuration variables
 FORMAT_STRING_SUB = {"YEAR": "%Y", "MONTH": "%m", "DAY": "%d",
-                     "HOUR": "%H", "MINUTE": "%M", "SECOND": "%S"}
+                     "HOUR": "%H", "MINUTE": "%M", "SECOND": "%S"} #: String format varaiables
 
-SOURCE_TYPES = (WEB_SOURCE, RSYNC_SOURCE, RSS_SOURCE)
+SOURCE_TYPES = (WEB_SOURCE, RSYNC_SOURCE, RSS_SOURCE) #: The collection of avaiblae sources
 
 logger = logging.getLogger("dataleach.datatypes")
 
 class WordSet(object):
     """
-    Helper class defining a set of works for filtering and searhing.
+    Helper class defining a set of words for filtering and searhing.
     It is a wrapper class for Python Sets.  We wanted these sets to be
     explicitly marked as such.
     """
 
     def __init__(self, l):
+        """
+        Declare instance of WordSet.
+
+        @param l: List or Set of strings. 
+        """
         if isinstance(l, list):
             self.val = set(l)
         elif isinstance(l, set):
@@ -77,6 +81,13 @@ class WordSet(object):
             self.val = None
 
     def __eq__(self, other):
+        """
+        Equals operation.
+
+        @param other: L{dataleach.WordSet} for comparison.
+
+        @return: True if other equals this instance, False otehrwise.
+        """
         if isinstance(other, WordSet):
             return self.val == other.val
         if isinstance(other, set):
@@ -84,21 +95,55 @@ class WordSet(object):
         return False
 
     def __ne__(self, other):
+        """
+        Not equals operation
+
+        @param other: L{dataleach.WordSet} for comparison.
+
+        @return: True if other is not equals this instance, False otherwise.
+        """
 	return not self.__eq__(other)
 
     def __in__(self, val):
+        """
+        In operation
+
+        @param val: String to be checked.
+
+        @return: True if val is in the instance, False otherwise.
+        """
 	return val in self.val
 
     def to_set(self):
+        """
+        @return: The set of String values
+        """
         return self.val
 
     def __iter__(self):
+        """
+        @return: Iterator of String values
+        """
         return self.val.__iter__()
 
     def intersection(self, other):
+        """
+        Intersection operation
+
+        @param other: L{dataleach.WordSet} to be checked.
+
+        @return: L{dataleach.WordSet} intersecting other with this instance
+        """
         return self.__and__(other)
 
     def __and__(self, other):
+        """
+        And operation
+
+        @param other: List or Set to be ANDed.
+
+        @return: L{dataleach.WordSet} ANDing other with this instance
+        """
         tmp = self
         if isinstance(other, set) or isinstance(other, list):
             tmp.val = self.val & other
@@ -107,9 +152,23 @@ class WordSet(object):
         return tmp
 
     def union(self, other):
+        """
+        Union operation
+
+        @param other: L{dataleach.WordSet} to be ORed.
+
+        @return: L{dataleach.WordSet} unioning the other with this instance.
+        """
         return self.__or__(other)
 
     def __or__(self, other):
+        """
+        Or operation
+
+        @param other: L{dataleach.WordSet} to be ORed.
+
+        @return: L{dataleach.WordSet} ORing the other with this instance.
+        """
         tmp = WordSet([])
         if isinstance(other, set) or isinstance(other, list):
             tmp.val = self.val | other
@@ -126,6 +185,11 @@ class Configuration(object):
     """
 
     def __init__(self, **kargs):
+        """
+        Declare and instance of a configuration
+
+        @param kargs: The arg list
+        """
         keys = set(kargs.keys())
         # check that the configuration options are valid
         if (len(CONFIGURATION_VAR_LIST) !=
@@ -215,17 +279,20 @@ class Configuration(object):
 
     def has_domainbase(self):
         """
-        Return true if there is a defined domainbase
+        @return: True if there is a defined domainbase
         """
         if self.domain_base is None:
             return False
         return True
     def get_domainbase(self):
+        """
+        @return: The domain base value
+        """
         return self.domain_base
 
     def has_search(self):
         """
-        Return True if there is a search string.
+        @return: True if there is a search string.
         """
         if self.search_string is None:
             return False
@@ -233,52 +300,56 @@ class Configuration(object):
 
     def has_crawl(self):
         """
-        Return the value of crawl
+        @return: The value of crawl
         """
         return self.crawl
 
     def has_filter(self):
         """
-        Return Truc if there is a fiter string.
+        @return: True if there is a fiter string.
         """
         if self.filter_string is None:
             return False
         return True
 
-    def get_domainbase(self):
-        return self.domain_base
-
     def get_reverse(self):
         """
-        Return the value of reverse
+        @return: The value of reverse
         """
         return self.reverse
 
     def get_output_directory(self):
         """
-        Return the output directory.
+        @return: The output directory.
         """
         return self.output_directory
 
     def get_source_type(self):
         """
-        Return the source type
+        @return: The source type
         """
         return self.source_type
 
     def get_format(self):
         """
-        Return the format string
+        @return: The format string
         """
         return self.name_format
 
     def get_max_page_count(self):
         """
-        Return the Max page count
+        @return: The Max page count
         """
         return self.max_page_count
 
     def __eq__(self, other):
+        """
+        Equals operation
+
+        @param other: L{dataleach.Configuration} to be used.
+
+        @return: True if other equals this instance, False otherwise
+        """
         if isinstance(other, Configuration) and \
               self.source_type == other.source_type and \
               self.output_directory == other.output_directory and \
@@ -291,6 +362,9 @@ class Configuration(object):
         return False
 
     def __ne__(self):
+        """
+        Not equals operation
+        """
         return not self.__eq__()
 
 
@@ -299,6 +373,11 @@ class Format(object):
     Helper class for formating file names.
     """
     def __init__(self, s):
+        """
+        Declare a Format instance
+
+        @param s: String to be used.
+        """
         if s is None:
             s = DEFAULT_NAME_FORMAT
         self.raw_string = s
@@ -320,4 +399,7 @@ class Format(object):
         return tmp
 
     def get_string(self):
+        """
+        @return: The format string
+        """
         return self.fmt_string
