@@ -1,0 +1,38 @@
+<html><head><title>Epydoc Redirect Page</title>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+<!--
+var pages = ["dataleach.tests.dataleach.process.scrubber.scrubber.test_scrubber-c", "dataleach.tests.dataleach.process.configreader.test_config_error-c", "dataleach.tests.dataleach.process.keeper.keeper.test_scrubber-c", "dataleach.tests.dataleach.datatypes.datatypes.test_dataTypes-c", "dataleach.tests.dataleach.sources.rssreader.test_rssreader-c", "dataleach.tests.dataleach.sources.website.test_websites-c", "dataleach.tests.dataleach.process.scrubber.scrubber-m", "dataleach.sources.rssreader.KeyNotFoundException-c", "dataleach.tests.dataleach.process.keeper.keeper-m", "dataleach.process.configreader.IndividualConfig-c", "dataleach.tests.dataleach.process.configreader-m", "dataleach.tests.dataleach.datatypes.datatypes-m", "dataleach.tests.dataleach.sources.rssreader-m", "dataleach.process.configreader.ConfigReader-c", "dataleach.process.configreader.SystemConfig-c", "dataleach.tests.dataleach.process.scrubber-m", "dataleach.process.configreader.ConfigError-c", "dataleach.tests.dataleach.sources.website-m", "dataleach.tests.dataleach.process.keeper-m", "dataleach.sources.rssreader.RSSReader-c", "dataleach.process.scrubber.ScrubList-c", "dataleach.tests.dataleach.datatypes-m", "dataleach.process.keeper.KeeperList-c", "dataleach.process.scrubber.ScrubReg-c", "dataleach.process.scrubber.Scrubber-c", "dataleach.process.keeper.KeeperReg-c", "dataleach.tests.dataleach.process-m", "dataleach.tests.dataleach.sources-m", "dataleach.datatypes.Configuration-c", "dataleach.sources.website.WebSite-c", "dataleach.process.keeper.Keeper-c", "dataleach.webgrabber.WebGrabber-c", "dataleach.process.configreader-m", "dataleach.sources.rsync.Rsync-c", "dataleach.sources.rssreader-m", "dataleach.datatypes.WordSet-c", "dataleach.process.scrubber-m", "dataleach.datatypes.Format-c", "dataleach.sources.website-m", "dataleach.tests.dataleach-m", "dataleach.leach.DataLeach-c", "exceptions.AssertionError-c", "dataleach.process.keeper-m", "dataleach.sources.rsync-m", "dataleach.webgrabber-m", "dataleach.datatypes-m", "dataleach.process-m", "dataleach.sources-m", "dataleach.leach-m", "dataleach.tests-m", "dataleach-m"];
+var dottedName = get_anchor();
+if (dottedName) {
+    var target = redirect_url(dottedName);
+    if (target) window.location.replace(target);
+}
+// -->
+</script>
+
+<h3>Epydoc Auto-redirect page</h3>
+
+<p>When javascript is enabled, this page will redirect URLs of
+the form <tt>redirect.html#<i>dotted.name</i></tt> to the
+documentation for the object with the given fully-qualified
+dotted name.</p>
+<p><a id="message"> &nbsp; </a></p>
+
+<script type="text/javascript">
+<!--
+if (dottedName) {
+    var msg = document.getElementById("message");
+    msg.innerHTML = "No documentation found for <tt>"+
+                    dottedName+"</tt>";
+}
+// -->
+</script>
+
+</body>
+</html>

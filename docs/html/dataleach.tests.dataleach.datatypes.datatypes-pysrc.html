@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>dataleach.tests.dataleach.datatypes.datatypes</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dataleach-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="dataleach-module.html">Package&nbsp;dataleach</a> ::
+        <a href="dataleach.tests-module.html">Package&nbsp;tests</a> ::
+        <a href="dataleach.tests.dataleach-module.html">Package&nbsp;dataleach</a> ::
+        <a href="dataleach.tests.dataleach.datatypes-module.html">Package&nbsp;datatypes</a> ::
+        Module&nbsp;datatypes
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="dataleach.tests.dataleach.datatypes.datatypes-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="dataleach.tests.dataleach.datatypes.datatypes-module.html">Module dataleach.tests.dataleach.datatypes.datatypes</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># ----------------------------------------------------------------------</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright &#169; 2010, RedJack, LLC.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># All rights reserved.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># Please see the LICENSE.txt file in this distribution for license</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># details.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># ----------------------------------------------------------------------</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">unittest</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package dataleach=dataleach-module.html,Package dataleach.tests.dataleach=dataleach.tests.dataleach-module.html"><a title="dataleach
+dataleach.tests.dataleach" class="py-name" href="#" onclick="return doclink('link-0', 'dataleach', 'link-0');">dataleach</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package dataleach.datatypes=dataleach.datatypes-module.html,Package dataleach.tests.dataleach.datatypes=dataleach.tests.dataleach.datatypes-module.html,Module dataleach.tests.dataleach.datatypes.datatypes=dataleach.tests.dataleach.datatypes.datatypes-module.html"><a title="dataleach.datatypes
+dataleach.tests.dataleach.datatypes
+dataleach.tests.dataleach.datatypes.datatypes" class="py-name" href="#" onclick="return doclink('link-1', 'datatypes', 'link-1');">datatypes</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">basicConfig</tt><tt class="py-op">(</tt><tt class="py-name">level</tt><tt class="py-op">=</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">WARNING</tt><tt class="py-op">,</tt> <tt class="py-name">stream</tt><tt class="py-op">=</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">,</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">                    <tt class="py-name">format</tt><tt class="py-op">=</tt><tt class="py-string">"%(message)s"</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="test_dataTypes"></a><div id="test_dataTypes-def"><a name="L21"></a><tt class="py-lineno"> 21</tt> <a class="py-toggle" href="#" id="test_dataTypes-toggle" onclick="return toggle('test_dataTypes');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="dataleach.tests.dataleach.datatypes.datatypes.test_dataTypes-class.html">test_dataTypes</a><tt class="py-op">(</tt><tt class="py-base-class">unittest</tt><tt class="py-op">.</tt><tt class="py-base-class">TestCase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="test_dataTypes-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="test_dataTypes-expanded"><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="test_dataTypes.test_word_set_init"></a><div id="test_dataTypes.test_word_set_init-def"><a name="L23"></a><tt class="py-lineno"> 23</tt> <a class="py-toggle" href="#" id="test_dataTypes.test_word_set_init-toggle" onclick="return toggle('test_dataTypes.test_word_set_init');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dataleach.tests.dataleach.datatypes.datatypes.test_dataTypes-class.html#test_word_set_init">test_word_set_init</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="test_dataTypes.test_word_set_init-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="test_dataTypes.test_word_set_init-expanded"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">input_set</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"hello"</tt><tt class="py-op">,</tt> <tt class="py-string">"this one"</tt><tt class="py-op">,</tt> <tt class="py-string">"that one"</tt><tt class="py-op">]</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">list_input</tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name" targets="Class dataleach.datatypes.WordSet=dataleach.datatypes.WordSet-class.html"><a title="dataleach.datatypes.WordSet" class="py-name" href="#" onclick="return doclink('link-2', 'WordSet', 'link-2');">WordSet</a></tt><tt class="py-op">(</tt><tt class="py-name">input_set</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">set_input</tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="dataleach.datatypes.WordSet" class="py-name" href="#" onclick="return doclink('link-3', 'WordSet', 'link-2');">WordSet</a></tt><tt class="py-op">(</tt><tt id="link-4" class="py-name" targets="Method dataleach.process.configreader.ConfigReader.set()=dataleach.process.configreader.ConfigReader-class.html#set"><a title="dataleach.process.configreader.ConfigReader.set" class="py-name" href="#" onclick="return doclink('link-4', 'set', 'link-4');">set</a></tt><tt class="py-op">(</tt><tt class="py-name">input_set</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">element</tt> <tt class="py-keyword">in</tt> <tt class="py-name">input_set</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-name">element</tt> <tt class="py-keyword">in</tt> <tt class="py-name">set_input</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-name">element</tt> <tt class="py-keyword">in</tt> <tt class="py-name">list_input</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="test_dataTypes.test_word_set_operations"></a><div id="test_dataTypes.test_word_set_operations-def"><a name="L31"></a><tt class="py-lineno"> 31</tt> <a class="py-toggle" href="#" id="test_dataTypes.test_word_set_operations-toggle" onclick="return toggle('test_dataTypes.test_word_set_operations');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dataleach.tests.dataleach.datatypes.datatypes.test_dataTypes-class.html#test_word_set_operations">test_word_set_operations</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="test_dataTypes.test_word_set_operations-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="test_dataTypes.test_word_set_operations-expanded"><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-name">input1</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"hello"</tt><tt class="py-op">]</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">input2</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"bye"</tt><tt class="py-op">]</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">set1</tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name"><a title="dataleach.datatypes.WordSet" class="py-name" href="#" onclick="return doclink('link-5', 'WordSet', 'link-2');">WordSet</a></tt><tt class="py-op">(</tt><tt class="py-name">input1</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">set2</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="dataleach.datatypes.WordSet" class="py-name" href="#" onclick="return doclink('link-6', 'WordSet', 'link-2');">WordSet</a></tt><tt class="py-op">(</tt><tt class="py-name">input2</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-string">"hello"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">set1</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-string">"bye"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">set2</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">total_op</tt> <tt class="py-op">=</tt> <tt class="py-name">set1</tt> <tt class="py-op">|</tt> <tt class="py-name">set2</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">total_method</tt> <tt class="py-op">=</tt> <tt class="py-name">set1</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method dataleach.datatypes.WordSet.union()=dataleach.datatypes.WordSet-class.html#union"><a title="dataleach.datatypes.WordSet.union" class="py-name" href="#" onclick="return doclink('link-7', 'union', 'link-7');">union</a></tt><tt class="py-op">(</tt><tt class="py-name">set2</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-name">total_op</tt> <tt class="py-op">==</tt> <tt class="py-name">total_method</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-name">total_op</tt> <tt class="py-op">!=</tt> <tt class="py-name">set2</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-name">total_op</tt> <tt class="py-op">!=</tt> <tt class="py-name">set1</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">input3</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"a"</tt><tt class="py-op">,</tt> <tt class="py-string">"b"</tt><tt class="py-op">,</tt> <tt class="py-string">"c"</tt><tt class="py-op">]</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-name">input4</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"c"</tt><tt class="py-op">,</tt> <tt class="py-string">"d"</tt><tt class="py-op">]</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-name">total</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"c"</tt><tt class="py-op">]</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-name">set3</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="dataleach.datatypes.WordSet" class="py-name" href="#" onclick="return doclink('link-8', 'WordSet', 'link-2');">WordSet</a></tt><tt class="py-op">(</tt><tt class="py-name">input3</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">set4</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="dataleach.datatypes.WordSet" class="py-name" href="#" onclick="return doclink('link-9', 'WordSet', 'link-2');">WordSet</a></tt><tt class="py-op">(</tt><tt class="py-name">input4</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">total</tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="dataleach.datatypes.WordSet" class="py-name" href="#" onclick="return doclink('link-10', 'WordSet', 'link-2');">WordSet</a></tt><tt class="py-op">(</tt><tt class="py-name">total</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">total_op</tt> <tt class="py-op">=</tt> <tt class="py-name">set3</tt> <tt class="py-op">&amp;</tt> <tt class="py-name">set4</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-name">total_method</tt> <tt class="py-op">=</tt> <tt class="py-name">set3</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method dataleach.datatypes.WordSet.intersection()=dataleach.datatypes.WordSet-class.html#intersection"><a title="dataleach.datatypes.WordSet.intersection" class="py-name" href="#" onclick="return doclink('link-11', 'intersection', 'link-11');">intersection</a></tt><tt class="py-op">(</tt><tt class="py-name">set4</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-name">total</tt> <tt class="py-op">==</tt> <tt class="py-name">total_op</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertTrue</tt><tt class="py-op">(</tt><tt class="py-name">total</tt> <tt class="py-op">==</tt> <tt class="py-name">total_method</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="test_dataTypes.test_configuration_init"></a><div id="test_dataTypes.test_configuration_init-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="test_dataTypes.test_configuration_init-toggle" onclick="return toggle('test_dataTypes.test_configuration_init');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dataleach.tests.dataleach.datatypes.datatypes.test_dataTypes-class.html#test_configuration_init">test_configuration_init</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="test_dataTypes.test_configuration_init-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="test_dataTypes.test_configuration_init-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name" targets="Class dataleach.datatypes.Configuration=dataleach.datatypes.Configuration-class.html"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-12', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">filter_string</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-13', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-14" class="py-name" targets="Variable dataleach.datatypes.FILTER_STRING=dataleach.datatypes-module.html#FILTER_STRING,Variable dataleach.tests.dataleach.datatypes.datatypes.FILTER_STRING=dataleach.tests.dataleach.datatypes.datatypes-module.html#FILTER_STRING,Variable dataleach.tests.dataleach.process.configreader.FILTER_STRING=dataleach.tests.dataleach.process.configreader-module.html#FILTER_STRING,Variable dataleach.tests.dataleach.sources.website.FILTER_STRING=dataleach.tests.dataleach.sources.website-module.html#FILTER_STRING"><a title="dataleach.datatypes.FILTER_STRING
+dataleach.tests.dataleach.datatypes.datatypes.FILTER_STRING
+dataleach.tests.dataleach.process.configreader.FILTER_STRING
+dataleach.tests.dataleach.sources.website.FILTER_STRING" class="py-name" href="#" onclick="return doclink('link-14', 'FILTER_STRING', 'link-14');">FILTER_STRING</a></tt><tt class="py-op">=</tt><tt class="py-string">"f"</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">filter_string</tt><tt class="py-op">,</tt> <tt class="py-string">"f"</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-15', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-16" class="py-name" targets="Variable dataleach.datatypes.SEARCH_STRING=dataleach.datatypes-module.html#SEARCH_STRING,Variable dataleach.tests.dataleach.datatypes.datatypes.SEARCH_STRING=dataleach.tests.dataleach.datatypes.datatypes-module.html#SEARCH_STRING,Variable dataleach.tests.dataleach.process.configreader.SEARCH_STRING=dataleach.tests.dataleach.process.configreader-module.html#SEARCH_STRING,Variable dataleach.tests.dataleach.sources.website.SEARCH_STRING=dataleach.tests.dataleach.sources.website-module.html#SEARCH_STRING"><a title="dataleach.datatypes.SEARCH_STRING
+dataleach.tests.dataleach.datatypes.datatypes.SEARCH_STRING
+dataleach.tests.dataleach.process.configreader.SEARCH_STRING
+dataleach.tests.dataleach.sources.website.SEARCH_STRING" class="py-name" href="#" onclick="return doclink('link-16', 'SEARCH_STRING', 'link-16');">SEARCH_STRING</a></tt><tt class="py-op">=</tt><tt class="py-string">"s"</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">filter_string</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt><tt class="py-op">,</tt> <tt class="py-string">"s"</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-17', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="dataleach.datatypes.SEARCH_STRING
+dataleach.tests.dataleach.datatypes.datatypes.SEARCH_STRING
+dataleach.tests.dataleach.process.configreader.SEARCH_STRING
+dataleach.tests.dataleach.sources.website.SEARCH_STRING" class="py-name" href="#" onclick="return doclink('link-18', 'SEARCH_STRING', 'link-16');">SEARCH_STRING</a></tt><tt class="py-op">=</tt><tt class="py-string">"search"</tt><tt class="py-op">,</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                          <tt id="link-19" class="py-name"><a title="dataleach.datatypes.FILTER_STRING
+dataleach.tests.dataleach.datatypes.datatypes.FILTER_STRING
+dataleach.tests.dataleach.process.configreader.FILTER_STRING
+dataleach.tests.dataleach.sources.website.FILTER_STRING" class="py-name" href="#" onclick="return doclink('link-19', 'FILTER_STRING', 'link-14');">FILTER_STRING</a></tt><tt class="py-op">=</tt><tt class="py-string">"filter"</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">filter_string</tt><tt class="py-op">,</tt> <tt class="py-string">"filter"</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt><tt class="py-op">,</tt> <tt class="py-string">"search"</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-20" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-20', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-21" class="py-name" targets="Variable dataleach.datatypes.OUTPUT_DIRECTORY=dataleach.datatypes-module.html#OUTPUT_DIRECTORY,Variable dataleach.tests.dataleach.datatypes.datatypes.OUTPUT_DIRECTORY=dataleach.tests.dataleach.datatypes.datatypes-module.html#OUTPUT_DIRECTORY,Variable dataleach.tests.dataleach.process.configreader.OUTPUT_DIRECTORY=dataleach.tests.dataleach.process.configreader-module.html#OUTPUT_DIRECTORY,Variable dataleach.tests.dataleach.sources.website.OUTPUT_DIRECTORY=dataleach.tests.dataleach.sources.website-module.html#OUTPUT_DIRECTORY"><a title="dataleach.datatypes.OUTPUT_DIRECTORY
+dataleach.tests.dataleach.datatypes.datatypes.OUTPUT_DIRECTORY
+dataleach.tests.dataleach.process.configreader.OUTPUT_DIRECTORY
+dataleach.tests.dataleach.sources.website.OUTPUT_DIRECTORY" class="py-name" href="#" onclick="return doclink('link-21', 'OUTPUT_DIRECTORY', 'link-21');">OUTPUT_DIRECTORY</a></tt><tt class="py-op">=</tt><tt class="py-string">"someDirectory"</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method dataleach.datatypes.Configuration.get_output_directory()=dataleach.datatypes.Configuration-class.html#get_output_directory"><a title="dataleach.datatypes.Configuration.get_output_directory" class="py-name" href="#" onclick="return doclink('link-22', 'get_output_directory', 'link-22');">get_output_directory</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">"someDirectory"</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-23', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-24" class="py-name" targets="Variable dataleach.datatypes.SOURCE_TYPE=dataleach.datatypes-module.html#SOURCE_TYPE,Variable dataleach.tests.dataleach.datatypes.datatypes.SOURCE_TYPE=dataleach.tests.dataleach.datatypes.datatypes-module.html#SOURCE_TYPE,Variable dataleach.tests.dataleach.process.configreader.SOURCE_TYPE=dataleach.tests.dataleach.process.configreader-module.html#SOURCE_TYPE,Variable dataleach.tests.dataleach.sources.website.SOURCE_TYPE=dataleach.tests.dataleach.sources.website-module.html#SOURCE_TYPE"><a title="dataleach.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.datatypes.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.process.configreader.SOURCE_TYPE
+dataleach.tests.dataleach.sources.website.SOURCE_TYPE" class="py-name" href="#" onclick="return doclink('link-24', 'SOURCE_TYPE', 'link-24');">SOURCE_TYPE</a></tt><tt class="py-op">=</tt><tt id="link-25" class="py-name" targets="Variable dataleach.datatypes.WEB_SOURCE=dataleach.datatypes-module.html#WEB_SOURCE,Variable dataleach.tests.dataleach.datatypes.datatypes.WEB_SOURCE=dataleach.tests.dataleach.datatypes.datatypes-module.html#WEB_SOURCE,Variable dataleach.tests.dataleach.process.configreader.WEB_SOURCE=dataleach.tests.dataleach.process.configreader-module.html#WEB_SOURCE,Variable dataleach.tests.dataleach.sources.website.WEB_SOURCE=dataleach.tests.dataleach.sources.website-module.html#WEB_SOURCE"><a title="dataleach.datatypes.WEB_SOURCE
+dataleach.tests.dataleach.datatypes.datatypes.WEB_SOURCE
+dataleach.tests.dataleach.process.configreader.WEB_SOURCE
+dataleach.tests.dataleach.sources.website.WEB_SOURCE" class="py-name" href="#" onclick="return doclink('link-25', 'WEB_SOURCE', 'link-25');">WEB_SOURCE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method dataleach.datatypes.Configuration.get_source_type()=dataleach.datatypes.Configuration-class.html#get_source_type"><a title="dataleach.datatypes.Configuration.get_source_type" class="py-name" href="#" onclick="return doclink('link-26', 'get_source_type', 'link-26');">get_source_type</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-27" class="py-name"><a title="dataleach.datatypes.WEB_SOURCE
+dataleach.tests.dataleach.datatypes.datatypes.WEB_SOURCE
+dataleach.tests.dataleach.process.configreader.WEB_SOURCE
+dataleach.tests.dataleach.sources.website.WEB_SOURCE" class="py-name" href="#" onclick="return doclink('link-27', 'WEB_SOURCE', 'link-25');">WEB_SOURCE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-28', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="dataleach.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.datatypes.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.process.configreader.SOURCE_TYPE
+dataleach.tests.dataleach.sources.website.SOURCE_TYPE" class="py-name" href="#" onclick="return doclink('link-29', 'SOURCE_TYPE', 'link-24');">SOURCE_TYPE</a></tt><tt class="py-op">=</tt><tt id="link-30" class="py-name" targets="Variable dataleach.datatypes.RSS_SOURCE=dataleach.datatypes-module.html#RSS_SOURCE,Variable dataleach.tests.dataleach.datatypes.datatypes.RSS_SOURCE=dataleach.tests.dataleach.datatypes.datatypes-module.html#RSS_SOURCE,Variable dataleach.tests.dataleach.process.configreader.RSS_SOURCE=dataleach.tests.dataleach.process.configreader-module.html#RSS_SOURCE,Variable dataleach.tests.dataleach.sources.website.RSS_SOURCE=dataleach.tests.dataleach.sources.website-module.html#RSS_SOURCE"><a title="dataleach.datatypes.RSS_SOURCE
+dataleach.tests.dataleach.datatypes.datatypes.RSS_SOURCE
+dataleach.tests.dataleach.process.configreader.RSS_SOURCE
+dataleach.tests.dataleach.sources.website.RSS_SOURCE" class="py-name" href="#" onclick="return doclink('link-30', 'RSS_SOURCE', 'link-30');">RSS_SOURCE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="dataleach.datatypes.Configuration.get_source_type" class="py-name" href="#" onclick="return doclink('link-31', 'get_source_type', 'link-26');">get_source_type</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-32" class="py-name"><a title="dataleach.datatypes.RSS_SOURCE
+dataleach.tests.dataleach.datatypes.datatypes.RSS_SOURCE
+dataleach.tests.dataleach.process.configreader.RSS_SOURCE
+dataleach.tests.dataleach.sources.website.RSS_SOURCE" class="py-name" href="#" onclick="return doclink('link-32', 'RSS_SOURCE', 'link-30');">RSS_SOURCE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-33', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-34" class="py-name"><a title="dataleach.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.datatypes.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.process.configreader.SOURCE_TYPE
+dataleach.tests.dataleach.sources.website.SOURCE_TYPE" class="py-name" href="#" onclick="return doclink('link-34', 'SOURCE_TYPE', 'link-24');">SOURCE_TYPE</a></tt><tt class="py-op">=</tt><tt id="link-35" class="py-name" targets="Variable dataleach.datatypes.RSYNC_SOURCE=dataleach.datatypes-module.html#RSYNC_SOURCE,Variable dataleach.tests.dataleach.datatypes.datatypes.RSYNC_SOURCE=dataleach.tests.dataleach.datatypes.datatypes-module.html#RSYNC_SOURCE,Variable dataleach.tests.dataleach.process.configreader.RSYNC_SOURCE=dataleach.tests.dataleach.process.configreader-module.html#RSYNC_SOURCE,Variable dataleach.tests.dataleach.sources.website.RSYNC_SOURCE=dataleach.tests.dataleach.sources.website-module.html#RSYNC_SOURCE"><a title="dataleach.datatypes.RSYNC_SOURCE
+dataleach.tests.dataleach.datatypes.datatypes.RSYNC_SOURCE
+dataleach.tests.dataleach.process.configreader.RSYNC_SOURCE
+dataleach.tests.dataleach.sources.website.RSYNC_SOURCE" class="py-name" href="#" onclick="return doclink('link-35', 'RSYNC_SOURCE', 'link-35');">RSYNC_SOURCE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="dataleach.datatypes.Configuration.get_source_type" class="py-name" href="#" onclick="return doclink('link-36', 'get_source_type', 'link-26');">get_source_type</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-37" class="py-name"><a title="dataleach.datatypes.RSYNC_SOURCE
+dataleach.tests.dataleach.datatypes.datatypes.RSYNC_SOURCE
+dataleach.tests.dataleach.process.configreader.RSYNC_SOURCE
+dataleach.tests.dataleach.sources.website.RSYNC_SOURCE" class="py-name" href="#" onclick="return doclink('link-37', 'RSYNC_SOURCE', 'link-35');">RSYNC_SOURCE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-38" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-38', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="dataleach.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.datatypes.datatypes.SOURCE_TYPE
+dataleach.tests.dataleach.process.configreader.SOURCE_TYPE
+dataleach.tests.dataleach.sources.website.SOURCE_TYPE" class="py-name" href="#" onclick="return doclink('link-39', 'SOURCE_TYPE', 'link-24');">SOURCE_TYPE</a></tt><tt class="py-op">=</tt><tt class="py-string">"Not Valid"</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="dataleach.datatypes.Configuration.get_source_type" class="py-name" href="#" onclick="return doclink('link-40', 'get_source_type', 'link-26');">get_source_type</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
+<a name="test_dataTypes.test_format"></a><div id="test_dataTypes.test_format-def"><a name="L85"></a><tt class="py-lineno"> 85</tt> <a class="py-toggle" href="#" id="test_dataTypes.test_format-toggle" onclick="return toggle('test_dataTypes.test_format');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dataleach.tests.dataleach.datatypes.datatypes.test_dataTypes-class.html#test_format">test_format</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="test_dataTypes.test_format-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="test_dataTypes.test_format-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name"><a title="dataleach.datatypes.Configuration" class="py-name" href="#" onclick="return doclink('link-41', 'Configuration', 'link-12');">Configuration</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method dataleach.datatypes.Configuration.get_format()=dataleach.datatypes.Configuration-class.html#get_format"><a title="dataleach.datatypes.Configuration.get_format" class="py-name" href="#" onclick="return doclink('link-42', 'get_format', 'link-42');">get_format</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">raw_string</tt><tt class="py-op">,</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                         <tt id="link-43" class="py-name" targets="Variable dataleach.datatypes.DEFAULT_NAME_FORMAT=dataleach.datatypes-module.html#DEFAULT_NAME_FORMAT,Variable dataleach.tests.dataleach.datatypes.datatypes.DEFAULT_NAME_FORMAT=dataleach.tests.dataleach.datatypes.datatypes-module.html#DEFAULT_NAME_FORMAT,Variable dataleach.tests.dataleach.process.configreader.DEFAULT_NAME_FORMAT=dataleach.tests.dataleach.process.configreader-module.html#DEFAULT_NAME_FORMAT,Variable dataleach.tests.dataleach.sources.website.DEFAULT_NAME_FORMAT=dataleach.tests.dataleach.sources.website-module.html#DEFAULT_NAME_FORMAT"><a title="dataleach.datatypes.DEFAULT_NAME_FORMAT
+dataleach.tests.dataleach.datatypes.datatypes.DEFAULT_NAME_FORMAT
+dataleach.tests.dataleach.process.configreader.DEFAULT_NAME_FORMAT
+dataleach.tests.dataleach.sources.website.DEFAULT_NAME_FORMAT" class="py-name" href="#" onclick="return doclink('link-43', 'DEFAULT_NAME_FORMAT', 'link-43');">DEFAULT_NAME_FORMAT</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name" targets="Class dataleach.datatypes.Format=dataleach.datatypes.Format-class.html"><a title="dataleach.datatypes.Format" class="py-name" href="#" onclick="return doclink('link-44', 'Format', 'link-44');">Format</a></tt><tt class="py-op">(</tt><tt class="py-string">"%Y%m%d:%H:%M:%S_done"</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-string">"20090516:00:01:02_done"</tt><tt class="py-op">,</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                         <tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method dataleach.datatypes.Format.gen_fmt_string()=dataleach.datatypes.Format-class.html#gen_fmt_string"><a title="dataleach.datatypes.Format.gen_fmt_string" class="py-name" href="#" onclick="return doclink('link-45', 'gen_fmt_string', 'link-45');">gen_fmt_string</a></tt><tt class="py-op">(</tt><tt class="py-name">YEAR</tt><tt class="py-op">=</tt><tt class="py-string">"2009"</tt><tt class="py-op">,</tt> <tt class="py-name">MONTH</tt><tt class="py-op">=</tt><tt class="py-string">"05"</tt><tt class="py-op">,</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                                          <tt class="py-name">DAY</tt><tt class="py-op">=</tt><tt class="py-string">"16"</tt><tt class="py-op">,</tt> <tt class="py-name">HOUR</tt><tt class="py-op">=</tt><tt class="py-string">"00"</tt><tt class="py-op">,</tt> <tt class="py-name">MINUTE</tt><tt class="py-op">=</tt><tt class="py-string">"01"</tt><tt class="py-op">,</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                                          <tt class="py-name">SECOND</tt><tt class="py-op">=</tt><tt class="py-string">"02"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="dataleach.datatypes.Format" class="py-name" href="#" onclick="return doclink('link-46', 'Format', 'link-44');">Format</a></tt><tt class="py-op">(</tt><tt class="py-string">"%Y%m%d:%%H:%M:%S_done"</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-string">"20090516:00:01:02_done"</tt><tt class="py-op">,</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                         <tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="dataleach.datatypes.Format.gen_fmt_string" class="py-name" href="#" onclick="return doclink('link-47', 'gen_fmt_string', 'link-45');">gen_fmt_string</a></tt><tt class="py-op">(</tt><tt class="py-name">YEAR</tt><tt class="py-op">=</tt><tt class="py-string">"2009"</tt><tt class="py-op">,</tt> <tt class="py-name">MONTH</tt><tt class="py-op">=</tt><tt class="py-string">"05"</tt><tt class="py-op">,</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                                          <tt class="py-name">DAY</tt><tt class="py-op">=</tt><tt class="py-string">"16"</tt><tt class="py-op">,</tt> <tt class="py-name">HOUR</tt><tt class="py-op">=</tt><tt class="py-string">"00"</tt><tt class="py-op">,</tt> <tt class="py-name">MINUTE</tt><tt class="py-op">=</tt><tt class="py-string">"01"</tt><tt class="py-op">,</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                                          <tt class="py-name">SECOND</tt><tt class="py-op">=</tt><tt class="py-string">"02"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-name">a</tt> <tt class="py-op">=</tt> <tt id="link-48" class="py-name"><a title="dataleach.datatypes.Format" class="py-name" href="#" onclick="return doclink('link-48', 'Format', 'link-44');">Format</a></tt><tt class="py-op">(</tt><tt class="py-string">"%Y%m%d:%H:%M:%S_done%X"</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">assertEqual</tt><tt class="py-op">(</tt><tt class="py-string">"20090516:00:01:02_doneX"</tt><tt class="py-op">,</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                         <tt class="py-name">a</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="dataleach.datatypes.Format.gen_fmt_string" class="py-name" href="#" onclick="return doclink('link-49', 'gen_fmt_string', 'link-45');">gen_fmt_string</a></tt><tt class="py-op">(</tt><tt class="py-name">YEAR</tt><tt class="py-op">=</tt><tt class="py-string">"2009"</tt><tt class="py-op">,</tt> <tt class="py-name">MONTH</tt><tt class="py-op">=</tt><tt class="py-string">"05"</tt><tt class="py-op">,</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                                          <tt class="py-name">DAY</tt><tt class="py-op">=</tt><tt class="py-string">"16"</tt><tt class="py-op">,</tt> <tt class="py-name">HOUR</tt><tt class="py-op">=</tt><tt class="py-string">"00"</tt><tt class="py-op">,</tt> <tt class="py-name">MINUTE</tt><tt class="py-op">=</tt><tt class="py-string">"01"</tt><tt class="py-op">,</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                                          <tt class="py-name">SECOND</tt><tt class="py-op">=</tt><tt class="py-string">"02"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dataleach-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Oct 14 15:52:04 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
