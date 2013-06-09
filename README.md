@@ -30,6 +30,7 @@ FORMAT=%Y%M%D.%h
 ~~~
 
 The configuration is divided into two sections.
+
 1. **INPUT** - Defines where to look for sources.
    1. _DIR_ - The directory to use
    2. _EXTENSION_ - The extension to look for
