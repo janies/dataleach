@@ -83,8 +83,8 @@ class ConfigReader(object):
         sections = set(self.configParser.sections())
         listingKeys = set(listing.keys())
         if len(sections - listingKeys) != 0:
-            print "%s is not valid (%d invalid)" % (sections,
-                                   len(sections -listingKeys))
+            logger.error("%s is not valid (%d invalid)" % (sections,
+                                   len(sections -listingKeys)))
             return False
         for section in sections:
             options = set(self.configParser.options(section))

@@ -80,7 +80,6 @@ class test_config_error(unittest.TestCase):
             self.assertEqual(c.get_max_page_count(), 50)
 
         except Exception as inst:
-            print inst
             self.fail()
     def test_options(self):
         inDir = (os.path.abspath(os.curdir) + "/" +
