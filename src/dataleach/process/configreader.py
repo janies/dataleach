@@ -301,6 +301,8 @@ class IndividualConfig(object):
                 "%s does not have a output directory" % self.output_dir
         else:
             self.output_dir = os.path.abspath(self.output_dir)
+            if not os.path.exists(self.output_dir):
+                os.makedirs(self.output_dir)
 
     def get_config_name(self):
         """
