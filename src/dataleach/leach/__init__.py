@@ -36,7 +36,7 @@ class DataLeach(object):
     """
     The class defining the data leach system.
     """
-    def __init__(self, args):
+    def __init__(self):
         """
         Declare a DataLeach.
         """
@@ -111,9 +111,8 @@ class DataLeach(object):
             logger.warning("No Data found at '%s'" % url) 
 
 def main():
-    args = sys.argv
     logging.basicConfig(format="%(message)s", level=logging.WARNING)
-    process = DataLeach(args)
+    process = DataLeach()
 
 
 if __name__ == "__main__":
