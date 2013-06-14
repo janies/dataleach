@@ -93,12 +93,14 @@ class WebSite(object):
         Iterate through the list of URLS available for use.
         """
         url = self.get_next()
+        logger.debug("iterating over %s" % url)
         while url is not None:
             logger.debug("toProcess: %s" % self.toProcess)
             logger.debug("Processed: %s" % self.processed)
             logger.debug("processing: %s" % url)
             #self.processed.append(url)
             if isinstance(url, str):
+                logger.debug("url is a string")
                 self.url = url
                 html = self.retrieve_data()
             else:
@@ -126,7 +128,7 @@ class WebSite(object):
         Do the web grab from the website and all the filtering
         and searching.
         """
-        #print html[:100]
+        print html[:100]
         (search, scrub, reverse) = self.generate_filters()
         if reverse == 0:
             if scrub is not None:

@@ -130,9 +130,9 @@ class RSSReader(object):
                       "No Link associated with entry '%s'" %
                                            entry["title"])
             if d.has_key(entry["title"]):
-                d[entry["title"]].append(entry["link"])
+                d[entry["title"]].append(str(entry["link"]))
             else:
-                d[entry["title"]] = [entry["link"]]
+                d[entry["title"]] = [str(entry["link"])]
         return d
  
     def __str__(self):
@@ -168,20 +168,22 @@ class RSSReader(object):
         entries = self.get_entries()
         count = 0
         for t in entries.keys():
-            site = WebSite(str(entries[t][0]), self.config)
-            output = "%s.%03d" % (name, count)
-            site.output_file(output)
-            count += 1 
-        
+            for url in entries[t]:
+                 print url
+                 site = WebSite(url, self.config)
+                 output = "%s.%03d" % (name, count)
+                 site.output_file(output)
+                 count += 1
 
-FEEDLIST = ["http://seclists.org/rss/dataloss.rss"]
+FEEDLIST = ["http://www.malwaredomainlist.com/hostslist/mdl.xml"] #["http://seclists.org/rss/dataloss.rss"]
 if __name__ == "__main__":
+    logging.basicConfig(format="%(message)s", level=logging.DEBUG)
     #print "hi"
-    title = open("../testData/raw/title.txt", "w")
+    title = open("testData/raw/title.txt", "w")
     for feed in FEEDLIST: 
         print feed
         r = RSSReader(feed)
-        r.output_file("../tmp/data")
+        r.output_file("tmp/data")
         #entries = r.get_entries()
         #for t in entries.keys():
         #    print "\t%s" % t
