@@ -10,7 +10,7 @@
 
 import logging
 import sys
-import urllib2
+import requests
 
 __all__ = (
     "WebGrabber",
@@ -18,16 +18,21 @@ __all__ = (
 
 logger = logging.getLogger("dataleach.webgrabber")
 
+TEXT = "text"
+
 class WebGrabber(object):
     """
     Class for retrieving a webpage.
     """
-    def __init__(self, url):
+    def __init__(self, url, user=None, password=None):
         if isinstance(url, str):
             self.url = url
         else:
             self.url = None
         self.data = ""
+        self.content_type = TEXT
+        self.user = user
+        self.password = password
         self.failed = False
 
     def get_page(self):
@@ -37,15 +42,25 @@ class WebGrabber(object):
         #logger.info("Attempting to get web page from '%s'" % self.url)
         try:
             if self.url is not None:
-                page = urllib2.urlopen(self.url)
+                params = {}
+                if self.user and self.password:
+                    params["auth"] =(self.user, self.password)
+                response = requests.get(self.url, **params)
+                self.data = response.text
+                self.content_type = response.headers["content_type"]
+                self.failed = not response.status_code < 300
             else:
-                page = ""
-            self.data = ""
-            for line in page:
-                self.data += line
+                self.data = ""
+                self.content_type = TEXT
         except Exception as inst:
             logger.warning("Failed to retrieve info (%s)" % inst)
             self.failed = True
+
+    def get_content_type(self):
+        """
+        @return: The content type returned by the request
+        """
+        return self.content_type
 
     def get_data(self):
         """

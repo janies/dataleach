@@ -102,13 +102,13 @@ class WebSite(object):
             if isinstance(url, str):
                 logger.debug("url is a string")
                 self.url = url
-                html = self.retrieve_data()
+                (data, content_type) = self.retrieve_data()
             else:
                 self.url = None
-                html = ""
+                data = ""
             if self.crawl:
-                self.get_urls(html)
-            self.process_data(html)
+                self.get_urls(data)
+            self.process_data(data, content_type)
             url = self.get_next()
 
     def retrieve_data(self):
@@ -118,16 +118,21 @@ class WebSite(object):
         w = WebGrabber(self.url)
         w.get_page()
         if w.done():
-            return w.get_data()
+            return (w.get_data(), w.get_content_type())
         else:
             logger.warning("Using empty string as WebSite data")
-            return ""
+            return ("", None)
 
-    def process_data(self, html):
+    def process_data(self, html, content_type):
         """
         Do the web grab from the website and all the filtering
         and searching.
         """
+        #### TO DO add processing for other content types
+        self.process_as_text(html)
+
+    def process_as_text(self, html):
+
         print html[:100]
         (search, scrub, reverse) = self.generate_filters()
         if reverse == 0:

@@ -39,14 +39,14 @@ class test_websites(unittest.TestCase):
     def test_remove_html(self):
         config = Configuration(FILTER_STRING="<.*?>")
         w = WebSite(None, config)
-        w.process_data(WEB_DATA)
+        w.process_data(WEB_DATA, "TEXT")
         self.assertEqual(NO_HTML, w.get_data())
 
     def test_find_ips(self):
         config = Configuration(SEARCH_STRING=
                                "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}")
         w = WebSite(None, config)
-        w.process_data(WEB_DATA)
+        w.process_data(WEB_DATA, "TEXT")
         self.assertEqual(len(w.get_data()), 2)
         self.assertTrue("127.0.0.1" in w.get_data())
         self.assertTrue("192.168.1.1" in w.get_data())
@@ -56,7 +56,7 @@ class test_websites(unittest.TestCase):
                               "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}",
                               FILTER_STRING = "<.*?>")
         w = WebSite(None, config)
-        w.process_data(WEB_DATA)
+        w.process_data(WEB_DATA, "TEXT")
         self.assertEqual(len(w.get_data()), 1)
         self.assertTrue("127.0.0.1" in w.get_data())
 
