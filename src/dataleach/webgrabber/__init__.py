@@ -47,7 +47,7 @@ class WebGrabber(object):
                     params["auth"] =(self.user, self.password)
                 response = requests.get(self.url, **params)
                 self.data = response.text
-                self.content_type = response.headers["content_type"]
+                self.content_type = response.headers["content-type"]
                 self.failed = not response.status_code < 300
             else:
                 self.data = ""

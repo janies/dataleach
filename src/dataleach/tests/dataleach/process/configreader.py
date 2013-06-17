@@ -100,7 +100,7 @@ class test_config_error(unittest.TestCase):
         l = []
         for inst in a.get_sources():
             l.append(inst.get_config_name())
-        self.assertEqual(l, configs)
+        self.assertEqual(l.sort(), configs.sort())
 
 
     def test_individual_options(self):
