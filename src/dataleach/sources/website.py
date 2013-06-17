@@ -133,7 +133,6 @@ class WebSite(object):
 
     def process_as_text(self, html):
 
-        print html[:100]
         (search, scrub, reverse) = self.generate_filters()
         if reverse == 0:
             if scrub is not None:
