@@ -132,15 +132,24 @@ class WebSite(object):
         self.process_as_text(html)
 
     def process_as_text(self, html):
-
+        """
+        Process the text data received.
+        """
+        logger.debug("processing:\n%s..." % (html[:25] or "Nothing")) 
         (search, scrub, reverse) = self.generate_filters()
+        logger.debug("Search: %s" % search)
+        logger.debug("Scrub: %s" % scrub)
+        logger.debug("reverse: %s" % reverse)
         if reverse == 0:
             if scrub is not None:
                 logger.debug("Scrubbing data")
                 html = scrub.scrub(html)
+                logger.debug("New size: %d" % len(html))
             if search is not None:
                 logger.debug("Searching data")
+                logger.debug("Working this %s" % type(html))
                 html = search.keep(html)
+                logger.debug(html)
         else:
             if search is not None:
                 logger.debug("Searching data")
