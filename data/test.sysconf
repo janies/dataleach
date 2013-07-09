@@ -1,0 +1,6 @@
+[INPUT]
+DIR=data/test
+EXTENSION=conf
+
+[OUTPUT]
+DIR=data/test

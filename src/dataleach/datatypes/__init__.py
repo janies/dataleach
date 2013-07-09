@@ -27,6 +27,7 @@ __all__ = (
     "DOMAIN_BASE",
     "MAX_PAGE_COUNT",
     "DEFAULT_NAME_FORMAT",
+    "JSON_FILE",
 )
 
 # List of possible configuration variables
@@ -37,12 +38,15 @@ OUTPUT_DIRECTORY = "OUTPUT_DIRECTORY" #: Output directory configuration variable
 SOURCE_TYPE = "SOURCE_TYPE"     #: Source type configuration variable name
 WEB_SOURCE = "WEB_SOURCE"       #: Web Source configuration variable name
 RSYNC_SOURCE = "RSYNC_SOURCE"   #: RSYNC Source configuration variable name
+JSON_FILE = "JSON_FILE"         #: Json file configuration variable name
 RSS_SOURCE = "RSS_SOURCE"       #: RSS Source configuration variable name
 NAME_FORMAT = "NAME_FORMAT"     #: Name Format configuration variable name
 REVERSE_ORDER = "REVERSE_ORDER" #: Reverse order configuration variable name
 CRAWL = "CRAWL"                 #: Crawl configuration variable name
 DOMAIN_BASE = "DOMAIN_BASE"     #: Domain base configuration variable name
 MAX_PAGE_COUNT = "MAX_PAGE_COUNT" #: Max page count configuration variable name
+IP_FIELD = "IP_FIELD"
+COMPRESSED = "COMPRESSED"
 
 # With no options the format that will be used for output files
 DEFAULT_NAME_FORMAT = "%Y%m%d.%H" #: format of output file names
@@ -52,11 +56,11 @@ CONFIGURATION_VAR_LIST = set(["FILTER_STRING", "SEARCH_STRING",
                               "OUTPUT_DIRECTORY", "SOURCE_TYPE",
                               "NAME_FORMAT", "REVERSE_ORDER",
                               "CRAWL", "DOMAIN_BASE",
-                              "MAX_PAGE_COUNT"]) #: The list of possible configuration variables
+                              "MAX_PAGE_COUNT", IP_FIELD, COMPRESSED]) #: The list of possible configuration variables
 FORMAT_STRING_SUB = {"YEAR": "%Y", "MONTH": "%m", "DAY": "%d",
                      "HOUR": "%H", "MINUTE": "%M", "SECOND": "%S"} #: String format varaiables
 
-SOURCE_TYPES = (WEB_SOURCE, RSYNC_SOURCE, RSS_SOURCE) #: The collection of avaiblae sources
+SOURCE_TYPES = (WEB_SOURCE, RSYNC_SOURCE, RSS_SOURCE, JSON_FILE) #: The collection of avaiblae sources
 
 logger = logging.getLogger("dataleach.datatypes")
 
@@ -276,6 +280,17 @@ class Configuration(object):
             self.max_page_count = int(val)
         else:
             self.max_page_count = 1
+
+        if kargs.has_key(IP_FIELD):
+            self.ip_field = kargs[IP_FIELD]
+        if kargs.has_key(COMPRESSED):
+            self.compressed = kargs[COMPRESSED]
+
+    def get_ip_field(self):
+        return self.ip_field
+
+    def is_compressed(self):
+        return self.compressed
 
     def has_domainbase(self):
         """

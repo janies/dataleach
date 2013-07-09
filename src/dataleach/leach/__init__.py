@@ -12,12 +12,14 @@ import sys
 import os
 import optparse
 import datetime
+import traceback
 
 from dataleach.datatypes import *
 from dataleach.process.configreader import *
 from dataleach.sources.rssreader import RSSReader
 from dataleach.sources.rsync import Rsync
 from dataleach.sources.website import WebSite
+from dataleach.sources.json import JsonFile
 from dataleach.process.keeper import Keeper, KeeperList, KeeperReg
 from dataleach.process.scrubber import *
 
@@ -106,7 +108,11 @@ class DataLeach(object):
                 source.output_file(file)
             elif type == RSYNC_SOURCE:
                 source = Rsync(url, config)
+            elif type == JSON_FILE:
+                source = JsonFile(url, config)
+                source.output_file(file)
         except Exception as inst:
+            traceback.print_exc()
             os.system("touch %s" % file)
             logger.warning("No Data found at '%s'" % url) 
 
