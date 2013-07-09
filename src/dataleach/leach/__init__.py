@@ -10,7 +10,7 @@
 import logging
 import sys
 import os
-import getopt
+import optparse
 import datetime
 
 from dataleach.datatypes import *
@@ -27,44 +27,41 @@ __all__ = (
 )
 
 logger = logging.getLogger("datalaeach.leach")
+CONFIG = "CONFIG"
+DESCRIPTION = """This script uses a configuration file to extract infomration
+from a collection of web sources."""
 
 
 class DataLeach(object):
     """
     The class defining the data leach system.
     """
-    def __init__(self, args):
+    def __init__(self):
         """
         Declare a DataLeach.
         """
-        self.configFile = None
+        self.config_file = None
         self.parse_options()
-        if self.configFile is None:
-            usage("Must specify a configuration file")
+        if self.config_file is None:
+            logger.error("Must specify a configuration file")
+            sys.exit(0)
         try:
-            self.config = SystemConfig(self.configFile)
+            self.config = SystemConfig(self.config_file)
         except Exception as inst:
-            usage("Unable to open file '%s'\n%s" %
-                  (self.configFile, inst))
+            logger.error("Unable to open file '%s'\n%s" %
+                  (self.config_file, inst))
+            sys.exit(0)
         self.process_sources(self.config)
 
     def parse_options(self):
         """
         Parser for command line arguments provided.
         """
-        try:
-            opts, args = getopt.getopt(sys.argv[1:],
-                                       "hc:",
-                                       ["help", "config="])
-        except getopt.GetoptError, err:
-            usage(str(err))
-        for o,a in opts:
-            if o in ("-h", "--help"):
-                usage()
-            elif o in ("-c", "--config"):
-                self.configFile = a
-            else:
-                usage("'%s' is not a recognized option" % o)
+        parser = optparse.OptionParser(description="")
+        parser.add_option("-c", "--config", dest=CONFIG,
+                          help="Configuration file to use")
+        options, args = parser.parse_args()
+        self.config_file = options.CONFIG 
 
     def process_sources(self, config):
         """
@@ -113,28 +110,9 @@ class DataLeach(object):
             os.system("touch %s" % file)
             logger.warning("No Data found at '%s'" % url) 
 
-def usage(error=None):
-    """
-    Print the system usage to the screen and exit.
-
-    @param error: If an error is provided, it will be printed.
-    """
-    if error is not None:
-        l = "%s\n" % error
-    else:
-        l =""
-    l += "usage: %s " % sys.argv[0]
-    l += "[-h | --help] [-c | --config=FILE]\n\n"
-    l += "--help No Arg.  Print the usage output and exit\n"
-    l += "--config Req Arg.  Use the configuration file to\n"
-    l += "         configure the system"
-    logger.warning(l)
-    sys.exit(0)
-
 def main():
-    args = sys.argv
     logging.basicConfig(format="%(message)s", level=logging.WARNING)
-    process = DataLeach(args)
+    process = DataLeach()
 
 
 if __name__ == "__main__":

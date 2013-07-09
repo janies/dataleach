@@ -93,20 +93,22 @@ class WebSite(object):
         Iterate through the list of URLS available for use.
         """
         url = self.get_next()
+        logger.debug("iterating over %s" % url)
         while url is not None:
             logger.debug("toProcess: %s" % self.toProcess)
             logger.debug("Processed: %s" % self.processed)
             logger.debug("processing: %s" % url)
             #self.processed.append(url)
             if isinstance(url, str):
+                logger.debug("url is a string")
                 self.url = url
-                html = self.retrieve_data()
+                (data, content_type) = self.retrieve_data()
             else:
                 self.url = None
-                html = ""
+                data = ""
             if self.crawl:
-                self.get_urls(html)
-            self.process_data(html)
+                self.get_urls(data)
+            self.process_data(data, content_type)
             url = self.get_next()
 
     def retrieve_data(self):
@@ -116,25 +118,38 @@ class WebSite(object):
         w = WebGrabber(self.url)
         w.get_page()
         if w.done():
-            return w.get_data()
+            return (w.get_data(), w.get_content_type())
         else:
             logger.warning("Using empty string as WebSite data")
-            return ""
+            return ("", None)
 
-    def process_data(self, html):
+    def process_data(self, html, content_type):
         """
         Do the web grab from the website and all the filtering
         and searching.
         """
-        #print html[:100]
+        #### TO DO add processing for other content types
+        self.process_as_text(html)
+
+    def process_as_text(self, html):
+        """
+        Process the text data received.
+        """
+        logger.debug("processing:\n%s..." % (html[:25] or "Nothing")) 
         (search, scrub, reverse) = self.generate_filters()
+        logger.debug("Search: %s" % search)
+        logger.debug("Scrub: %s" % scrub)
+        logger.debug("reverse: %s" % reverse)
         if reverse == 0:
             if scrub is not None:
                 logger.debug("Scrubbing data")
                 html = scrub.scrub(html)
+                logger.debug("New size: %d" % len(html))
             if search is not None:
                 logger.debug("Searching data")
+                logger.debug("Working this %s" % type(html))
                 html = search.keep(html)
+                logger.debug(html)
         else:
             if search is not None:
                 logger.debug("Searching data")

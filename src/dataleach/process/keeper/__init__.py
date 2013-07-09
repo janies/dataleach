@@ -51,6 +51,7 @@ class KeeperList(object):
             if input.rfind(val) > -1:
                 output.add("%s" % val)
         return output
+
     def __str__(self):
         """
         @return: A string of the KeeperList
@@ -121,6 +122,7 @@ class KeeperReg(object):
         @param reg: A string representing the regular expression.
         """
         if isinstance(reg, str):
+            logger.debug("Using reg ex: %s" % reg)
             self.reg = reg
         else:
             self.reg = ""
@@ -131,7 +133,8 @@ class KeeperReg(object):
 
         @param input: The text to be searched.
         """
-        if isinstance(input, str):
+        if isinstance(input, str) or isinstance(input, unicode):
+            logger.debug("Am processing the string")
             keepList = re.findall(self.reg, input.lower())
         else:
             keepList = []

@@ -83,8 +83,8 @@ class ConfigReader(object):
         sections = set(self.configParser.sections())
         listingKeys = set(listing.keys())
         if len(sections - listingKeys) != 0:
-            print "%s is not valid (%d invalid)" % (sections,
-                                   len(sections -listingKeys))
+            logger.error("%s is not valid (%d invalid)" % (sections,
+                                   len(sections -listingKeys)))
             return False
         for section in sections:
             options = set(self.configParser.options(section))
@@ -301,6 +301,8 @@ class IndividualConfig(object):
                 "%s does not have a output directory" % self.output_dir
         else:
             self.output_dir = os.path.abspath(self.output_dir)
+            if not os.path.exists(self.output_dir):
+                os.makedirs(self.output_dir)
 
     def get_config_name(self):
         """

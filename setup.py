@@ -19,6 +19,7 @@ setup(
     packages = find_packages('src', exclude=['dataleach.tests',
                                              'dataleach.tests.*']),
     install_requires = [ #"librsync",
+                         "requests",
                          "feedparser",
                          #"pysync",
                        ],
