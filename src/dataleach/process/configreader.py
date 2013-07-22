@@ -36,7 +36,7 @@ VALID_INDIVIDUAL_SECTIONS = {
     "DETAILS" : ["name", "type", "address"],
     "PROCESS" : ["filter", "search", "reverse_order", "crawl",
                  "domain_base", "max_page_count", "ip_field",
-                 "compression"],
+                 "tmp_file", "compression"],
     "IO" : ["output_dir"],
 } #: The collection of valid source configuration options
 
@@ -296,6 +296,7 @@ class IndividualConfig(object):
         self.domainBase = self.config_reader.get("PROCESS", "domain_base")
         self.maxPageCount = self.config_reader.get("PROCESS", "max_page_count")
         self.ip_field = self.config_reader.get("PROCESS", "ip_field")
+        self.tmp_file = self.config_reader.get("PROCESS", "tmp_file")
         self.compressed = self.config_reader.get("PROCESS", "compressed")
 
         self.output_dir = self.config_reader.get("IO","OUTPUT_DIR")
@@ -327,5 +328,6 @@ class IndividualConfig(object):
                              DOMAIN_BASE=self.domainBase,
                              MAX_PAGE_COUNT=self.maxPageCount,
                              IP_FIELD=self.ip_field,
+                             TMP_FILE=self.tmp_file,
                              COMPRESSED=self.compressed)
         

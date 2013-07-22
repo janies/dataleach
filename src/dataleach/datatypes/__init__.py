@@ -46,6 +46,7 @@ CRAWL = "CRAWL"                 #: Crawl configuration variable name
 DOMAIN_BASE = "DOMAIN_BASE"     #: Domain base configuration variable name
 MAX_PAGE_COUNT = "MAX_PAGE_COUNT" #: Max page count configuration variable name
 IP_FIELD = "IP_FIELD"
+TMP_FILE = "TMP_FILE"
 COMPRESSED = "COMPRESSED"
 
 # With no options the format that will be used for output files
@@ -56,7 +57,8 @@ CONFIGURATION_VAR_LIST = set(["FILTER_STRING", "SEARCH_STRING",
                               "OUTPUT_DIRECTORY", "SOURCE_TYPE",
                               "NAME_FORMAT", "REVERSE_ORDER",
                               "CRAWL", "DOMAIN_BASE",
-                              "MAX_PAGE_COUNT", IP_FIELD, COMPRESSED]) #: The list of possible configuration variables
+                              "MAX_PAGE_COUNT", IP_FIELD, TMP_FILE,
+                              COMPRESSED]) #: The list of possible configuration variables
 FORMAT_STRING_SUB = {"YEAR": "%Y", "MONTH": "%m", "DAY": "%d",
                      "HOUR": "%H", "MINUTE": "%M", "SECOND": "%S"} #: String format varaiables
 
@@ -285,6 +287,11 @@ class Configuration(object):
             self.ip_field = kargs[IP_FIELD]
         if kargs.has_key(COMPRESSED):
             self.compressed = kargs[COMPRESSED]
+        if kargs.has_key(TMP_FILE):
+            self.tmp_file = kargs[TMP_FILE]
+
+    def get_tmp_file(self):
+        return self.tmp_file
 
     def get_ip_field(self):
         return self.ip_field

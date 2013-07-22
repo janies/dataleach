@@ -21,6 +21,7 @@ setup(
     install_requires = [ #"librsync",
                          "requests",
                          "feedparser",
+                         "ijson",
                          #"pysync",
                        ],
     entry_points = {"console_scripts":
